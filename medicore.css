@@ -1982,3 +1982,81 @@ transform:translateY(0);
     color:#64748b;
 
 }
+/* ==============================
+   FOLLOW-UP MOBILE FIX
+============================== */
+
+.followQuestion{
+
+    margin:18px 0;
+    padding:18px;
+
+    background:#f7f7f7;
+
+    border-radius:10px;
+
+}
+
+.followOptions{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-top:12px;
+
+    flex-wrap:wrap;
+
+}
+
+.followOptions label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:10px 14px;
+
+    background:white;
+
+    border:1px solid #dbeafe;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .followOptions{
+
+        flex-direction:column;
+
+        gap:10px;
+
+    }
+
+    .followOptions label{
+
+        width:100%;
+
+        box-sizing:border-box;
+
+        font-size:16px;
+
+        padding:14px 16px;
+
+    }
+
+    .followOptions input{
+
+        transform:scale(1.25);
+
+    }
+
+}
