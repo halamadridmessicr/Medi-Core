@@ -1,0 +1,1810 @@
+[
+  {
+    "id": "D001",
+    "name": "Dengue Fever",
+    "category": "Infectious",
+
+    "symptoms": [
+      "High Fever",
+      "Headache",
+      "Joint Pain",
+      "Muscle Pain",
+      "Vomiting",
+      "Skin Rash",
+      "Fatigue",
+      "Nausea"
+    ],
+
+    "followUp": [
+      {
+        "question": "Have you noticed a skin rash?",
+        "type": "yesno"
+      },
+      {
+        "question": "Have you noticed any bleeding from the nose or gums?",
+        "type": "yesno"
+      }
+    ],
+
+    "treatment": [
+      "Drink plenty of fluids",
+      "Take adequate rest",
+      "Consult a physician"
+    ],
+
+    "specialist": "General Physician",
+
+    "emergencyLevel": "High",
+
+    "description": "Mosquito-borne viral disease."
+  },
+
+  {
+    "id": "D002",
+    "name": "Malaria",
+    "category": "Infectious",
+
+    "symptoms": [
+      "High Fever",
+      "Chills",
+      "Sweating",
+      "Headache",
+      "Vomiting",
+      "Fatigue",
+      "Muscle Pain"
+    ],
+
+    "followUp": [
+      {
+        "question": "Have you recently travelled to a malaria-prone area?",
+        "type": "yesno"
+      },
+      {
+        "question": "Do you experience fever in repeated cycles?",
+        "type": "yesno"
+      }
+    ],
+
+    "treatment": [
+      "Immediate medical consultation",
+      "Antimalarial medicines as prescribed"
+    ],
+
+    "specialist": "General Physician",
+
+    "emergencyLevel": "High",
+
+    "description": "Mosquito-borne parasitic disease."
+  },
+
+  {
+    "id": "D003",
+    "name": "Influenza",
+    "category": "Respiratory",
+
+    "symptoms": [
+      "Fever",
+      "Cough",
+      "Sore Throat",
+      "Runny Nose",
+      "Body Pain",
+      "Headache",
+      "Fatigue"
+    ],
+
+    "followUp": [
+      {
+        "question": "Do you have a sore throat?",
+        "type": "yesno"
+      },
+      {
+        "question": "Did your symptoms begin suddenly?",
+        "type": "yesno"
+      }
+    ],
+
+    "treatment": [
+      "Rest",
+      "Hydration",
+      "Medical consultation if symptoms worsen"
+    ],
+
+    "specialist": "General Physician",
+
+    "emergencyLevel": "Moderate",
+
+    "description": "Common viral respiratory infection."
+  },
+{
+  "id": "D004",
+  "name": "COVID-19",
+  "category": "Infectious",
+  "symptoms": [
+    "Fever",
+    "Dry Cough",
+    "Fatigue",
+    "Sore Throat",
+    "Headache",
+    "Loss of Taste",
+    "Loss of Smell",
+    "Shortness of Breath"
+  ],
+  "followUp": [
+    {
+      "question": "Have you recently lost your sense of taste or smell?",
+      "type": "yesno"
+    },
+    {
+      "question": "Have you recently been in contact with a COVID-19 patient?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Rest",
+    "Maintain hydration",
+    "Consult a physician"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Moderate",
+  "description": "A viral respiratory disease caused by SARS-CoV-2."
+},
+{
+  "id": "D005",
+  "name": "Typhoid Fever",
+  "category": "Infectious",
+  "symptoms": [
+    "High Fever",
+    "Headache",
+    "Abdominal Pain",
+    "Constipation",
+    "Diarrhea",
+    "Weakness",
+    "Loss of Appetite",
+    "Fatigue"
+  ],
+  "followUp": [
+    {
+      "question": "Has your fever lasted for more than 5 days?",
+      "type": "yesno"
+    },
+    {
+      "question": "Have you recently consumed contaminated food or water?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Maintain hydration",
+    "Seek medical evaluation",
+    "Take prescribed antibiotics only under medical supervision"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "High",
+  "description": "A bacterial infection caused by Salmonella Typhi."
+},
+{
+  "id": "D006",
+  "name": "Chikungunya",
+  "category": "Infectious",
+  "symptoms": [
+    "High Fever",
+    "Joint Pain",
+    "Muscle Pain",
+    "Headache",
+    "Skin Rash",
+    "Fatigue",
+    "Nausea"
+  ],
+  "followUp": [
+    {
+      "question": "Are your joint pains severe enough to limit movement?",
+      "type": "yesno"
+    },
+    {
+      "question": "Have you developed a skin rash?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Rest",
+    "Maintain hydration",
+    "Medical consultation"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Moderate",
+  "description": "A mosquito-borne viral disease causing fever and severe joint pain."
+},
+{
+  "id": "D007",
+  "name": "Viral Fever",
+  "category": "Infectious",
+  "symptoms": [
+    "Fever",
+    "Headache",
+    "Body Pain",
+    "Fatigue",
+    "Cough",
+    "Sore Throat",
+    "Runny Nose"
+  ],
+  "followUp": [
+    {
+      "question": "Have your symptoms lasted more than 3 days?",
+      "type": "yesno"
+    },
+    {
+      "question": "Do you have a sore throat?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Rest",
+    "Drink plenty of fluids",
+    "Consult a doctor if symptoms worsen"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Low",
+  "description": "A general viral illness causing fever and body aches."
+},
+{
+  "id": "D008",
+  "name": "Pneumonia",
+  "category": "Respiratory",
+  "symptoms": [
+    "Fever",
+    "Productive Cough",
+    "Chest Pain",
+    "Shortness of Breath",
+    "Fatigue",
+    "Chills"
+  ],
+  "followUp": [
+    {
+      "question": "Do you have difficulty breathing?",
+      "type": "yesno"
+    },
+    {
+      "question": "Are you coughing up mucus?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Seek medical evaluation",
+    "Rest",
+    "Maintain hydration"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "High",
+  "description": "An infection causing inflammation of the air sacs in one or both lungs."
+},
+{
+  "id": "D009",
+  "name": "Tuberculosis",
+  "category": "Respiratory",
+  "symptoms": [
+    "Persistent Cough",
+    "Chest Pain",
+    "Fatigue",
+    "Weight Loss",
+    "Night Sweats",
+    "Fever",
+    "Loss of Appetite"
+  ],
+  "followUp": [
+    {
+      "question": "Has your cough lasted more than 2 weeks?",
+      "type": "yesno"
+    },
+    {
+      "question": "Have you noticed blood while coughing?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Immediate medical evaluation",
+    "Complete prescribed anti-tuberculosis treatment",
+    "Maintain good nutrition"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "High",
+  "description": "A bacterial infection that mainly affects the lungs."
+},
+{
+  "id": "D010",
+  "name": "Bronchitis",
+  "category": "Respiratory",
+  "symptoms": [
+    "Persistent Cough",
+    "Productive Cough",
+    "Chest Discomfort",
+    "Fatigue",
+    "Shortness of Breath",
+    "Mild Fever"
+  ],
+  "followUp": [
+    {
+      "question": "Are you coughing up mucus?",
+      "type": "yesno"
+    },
+    {
+      "question": "Have you been smoking regularly?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Rest",
+    "Drink plenty of fluids",
+    "Consult a physician if symptoms persist"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "Moderate",
+  "description": "Inflammation of the bronchial tubes."
+},
+{
+  "id": "D011",
+  "name": "Asthma",
+  "category": "Respiratory",
+  "symptoms": [
+    "Shortness of Breath",
+    "Wheezing",
+    "Chest Tightness",
+    "Persistent Cough",
+    "Difficulty Breathing"
+  ],
+  "followUp": [
+    {
+      "question": "Do symptoms worsen at night or during exercise?",
+      "type": "yesno"
+    },
+    {
+      "question": "Have you been diagnosed with asthma before?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Avoid triggers",
+    "Use prescribed inhalers",
+    "Consult a pulmonologist"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "High",
+  "description": "A chronic disease causing inflammation and narrowing of the airways."
+},
+{
+  "id": "D012",
+  "name": "Common Cold",
+  "category": "Respiratory",
+  "symptoms": [
+    "Runny Nose",
+    "Sneezing",
+    "Sore Throat",
+    "Cough",
+    "Mild Fever",
+    "Headache"
+  ],
+  "followUp": [
+    {
+      "question": "Did symptoms start gradually?",
+      "type": "yesno"
+    },
+    {
+      "question": "Are you experiencing sneezing frequently?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Rest",
+    "Hydration",
+    "Symptomatic relief"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Low",
+  "description": "A common viral infection of the upper respiratory tract."
+},
+{
+  "id": "D013",
+  "name": "Sinusitis",
+  "category": "Respiratory",
+  "symptoms": [
+    "Facial Pain",
+    "Headache",
+    "Runny Nose",
+    "Nasal Congestion",
+    "Fever",
+    "Loss of Smell"
+  ],
+  "followUp": [
+    {
+      "question": "Do you feel pressure around your cheeks or forehead?",
+      "type": "yesno"
+    },
+    {
+      "question": "Have symptoms lasted more than 10 days?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Steam inhalation",
+    "Hydration",
+    "Medical consultation if persistent"
+  ],
+  "specialist": "ENT Specialist",
+  "emergencyLevel": "Low",
+  "description": "Inflammation of the sinus cavities."
+},
+{
+  "id": "D014",
+  "name": "Migraine",
+  "category": "Neurological",
+  "symptoms": [
+    "Severe Headache",
+    "Nausea",
+    "Vomiting",
+    "Sensitivity to Light",
+    "Sensitivity to Sound"
+  ],
+  "followUp": [
+    {
+      "question": "Is the headache usually on one side of the head?",
+      "type": "yesno"
+    },
+    {
+      "question": "Does light worsen your headache?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Rest in a quiet room",
+    "Hydration",
+    "Take prescribed medication"
+  ],
+  "specialist": "Neurologist",
+  "emergencyLevel": "Moderate",
+  "description": "A neurological condition causing recurrent severe headaches."
+},
+{
+  "id": "D015",
+  "name": "Tension Headache",
+  "category": "Neurological",
+  "symptoms": [
+    "Headache",
+    "Neck Pain",
+    "Shoulder Pain",
+    "Scalp Tenderness"
+  ],
+  "followUp": [
+    {
+      "question": "Have you been under stress recently?",
+      "type": "yesno"
+    },
+    {
+      "question": "Is the pain like a tight band around your head?",
+      "type": "yesno"
+    }
+  ],
+  "treatment": [
+    "Stress management",
+    "Rest",
+    "Pain relief as advised"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Low",
+  "description": "The most common type of headache, often associated with stress."
+},
+{
+  "id": "D016",
+  "name": "Hepatitis A",
+  "description": "A viral infection that causes inflammation of the liver and spreads through contaminated food or water.",
+  "symptoms": [
+    "Fever",
+    "Fatigue",
+    "Loss of Appetite",
+    "Nausea",
+    "Vomiting",
+    "Upper Abdominal Pain",
+    "Dark Urine",
+    "Jaundice"
+  ],
+  "treatment": [
+    "Rest",
+    "Hydration",
+    "Healthy Diet"
+  ],
+  "suggestedMedicines": [
+    "Paracetamol",
+    "ORS"
+  ],
+  "labTests": [
+    "Liver Function Test",
+    "Hepatitis A IgM",
+    "Bilirubin"
+  ],
+  "specialist": "Gastroenterologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Drink plenty of water",
+    "Avoid alcohol",
+    "Take adequate rest"
+  ],
+  "followUp": [
+    "Have your eyes become yellow?",
+    "Is your urine dark in color?"
+  ]
+},
+{
+  "id": "D017",
+  "name": "Hepatitis B",
+  "description": "A viral liver infection transmitted through infected blood and body fluids.",
+  "symptoms": [
+    "Fatigue",
+    "Joint Pain",
+    "Upper Abdominal Pain",
+    "Loss of Appetite",
+    "Dark Urine",
+    "Jaundice",
+    "Nausea"
+  ],
+  "treatment": [
+    "Antiviral Therapy",
+    "Regular Monitoring"
+  ],
+  "suggestedMedicines": [
+    "Tenofovir",
+    "Entecavir"
+  ],
+  "labTests": [
+    "HBsAg",
+    "HBV DNA",
+    "Liver Function Test"
+  ],
+  "specialist": "Hepatologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Avoid alcohol",
+    "Follow prescribed medication",
+    "Eat a balanced diet"
+  ],
+  "followUp": [
+    "Have you received the Hepatitis B vaccine?",
+    "Have symptoms lasted more than two weeks?"
+  ]
+},
+{
+  "id": "D018",
+  "name": "Measles",
+  "description": "A highly contagious viral disease characterized by fever and widespread rash.",
+  "symptoms": [
+    "High Fever",
+    "Persistent Cough",
+    "Runny Nose",
+    "Red Eyes",
+    "Skin Rash",
+    "Loss of Appetite"
+  ],
+  "treatment": [
+    "Supportive Care",
+    "Hydration",
+    "Vitamin A"
+  ],
+  "suggestedMedicines": [
+    "Paracetamol",
+    "ORS"
+  ],
+  "labTests": [
+    "Measles IgM",
+    "CBC"
+  ],
+  "specialist": "Pediatrician",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Isolate the patient",
+    "Drink fluids",
+    "Monitor body temperature"
+  ],
+  "followUp": [
+    "Did the rash appear after the fever?",
+    "Have you received the MMR vaccine?"
+  ]
+},
+{
+  "id": "D019",
+  "name": "Chickenpox",
+  "description": "A contagious viral infection causing itchy blisters and fever.",
+  "symptoms": [
+    "Fever",
+    "Skin Rash",
+    "Itching",
+    "Fatigue",
+    "Headache",
+    "Loss of Appetite"
+  ],
+  "treatment": [
+    "Symptomatic Treatment",
+    "Antiviral Therapy if required"
+  ],
+  "suggestedMedicines": [
+    "Calamine Lotion",
+    "Paracetamol",
+    "Acyclovir"
+  ],
+  "labTests": [
+    "Clinical Examination",
+    "Varicella IgM"
+  ],
+  "specialist": "Dermatologist",
+  "emergencyLevel": "Low",
+  "care": [
+    "Avoid scratching",
+    "Maintain hygiene",
+    "Rest well"
+  ],
+  "followUp": [
+    "Are there fluid-filled blisters?",
+    "Have new rashes appeared recently?"
+  ]
+},
+{
+  "id": "D020",
+  "name": "Mumps",
+  "description": "A viral infection affecting the salivary glands, causing painful swelling near the jaw.",
+  "symptoms": [
+    "Fever",
+    "Headache",
+    "Fatigue",
+    "Loss of Appetite",
+    "Swelling",
+    "Neck Pain",
+    "Difficulty Swallowing"
+  ],
+  "treatment": [
+    "Supportive Care",
+    "Pain Relief",
+    "Hydration"
+  ],
+  "suggestedMedicines": [
+    "Paracetamol",
+    "Ibuprofen"
+  ],
+  "labTests": [
+    "Mumps IgM",
+    "PCR Test"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Low",
+  "care": [
+    "Drink plenty of fluids",
+    "Eat soft foods",
+    "Apply warm compresses"
+  ],
+  "followUp": [
+    "Is there swelling below the ears?",
+    "Is chewing painful?"
+  ]
+},
+{
+  "id": "D021",
+  "name": "COPD",
+  "description": "Chronic Obstructive Pulmonary Disease is a long-term lung disease that blocks airflow and makes breathing difficult.",
+  "symptoms": [
+    "Persistent Cough",
+    "Productive Cough",
+    "Shortness of Breath",
+    "Chest Tightness",
+    "Wheezing",
+    "Fatigue"
+  ],
+  "treatment": [
+    "Bronchodilators",
+    "Pulmonary Rehabilitation",
+    "Oxygen Therapy"
+  ],
+  "suggestedMedicines": [
+    "Salbutamol",
+    "Tiotropium",
+    "Budesonide"
+  ],
+  "labTests": [
+    "Spirometry",
+    "Chest X-Ray",
+    "Arterial Blood Gas"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Stop smoking",
+    "Avoid polluted air",
+    "Practice breathing exercises"
+  ],
+  "followUp": [
+    "Do you smoke or have you smoked in the past?",
+    "Does breathlessness worsen during physical activity?"
+  ]
+},
+{
+  "id": "D022",
+  "name": "Acute Bronchitis",
+  "description": "Inflammation of the bronchial tubes, usually caused by viral infections.",
+  "symptoms": [
+    "Persistent Cough",
+    "Productive Cough",
+    "Chest Discomfort",
+    "Low Grade Fever",
+    "Fatigue",
+    "Wheezing"
+  ],
+  "treatment": [
+    "Rest",
+    "Hydration",
+    "Symptomatic Treatment"
+  ],
+  "suggestedMedicines": [
+    "Paracetamol",
+    "Salbutamol Syrup",
+    "Ambroxol"
+  ],
+  "labTests": [
+    "Chest X-Ray",
+    "CBC"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Low",
+  "care": [
+    "Drink warm fluids",
+    "Take adequate rest",
+    "Avoid smoking"
+  ],
+  "followUp": [
+    "Has the cough lasted more than one week?",
+    "Are you coughing up mucus?"
+  ]
+},
+{
+  "id": "D023",
+  "name": "Pleural Effusion",
+  "description": "A condition where excess fluid collects around the lungs.",
+  "symptoms": [
+    "Chest Pain",
+    "Difficulty Breathing",
+    "Shortness of Breath",
+    "Persistent Cough",
+    "Fatigue"
+  ],
+  "treatment": [
+    "Drainage of Fluid",
+    "Treat Underlying Cause"
+  ],
+  "suggestedMedicines": [
+    "Antibiotics",
+    "Diuretics"
+  ],
+  "labTests": [
+    "Chest X-Ray",
+    "Chest CT",
+    "Pleural Fluid Analysis"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Seek immediate medical care",
+    "Avoid strenuous activity"
+  ],
+  "followUp": [
+    "Does chest pain worsen while breathing?",
+    "Do you become breathless while lying down?"
+  ]
+},
+{
+  "id": "D024",
+  "name": "Pulmonary Embolism",
+  "description": "A life-threatening blockage in a pulmonary artery, usually caused by a blood clot.",
+  "symptoms": [
+    "Chest Pain",
+    "Shortness of Breath",
+    "Rapid Heartbeat",
+    "Coughing Blood",
+    "Dizziness"
+  ],
+  "treatment": [
+    "Blood Thinners",
+    "Emergency Care",
+    "Clot Removal"
+  ],
+  "suggestedMedicines": [
+    "Heparin",
+    "Apixaban",
+    "Rivaroxaban"
+  ],
+  "labTests": [
+    "D-Dimer",
+    "CT Pulmonary Angiography",
+    "ECG"
+  ],
+  "specialist": "Emergency Physician",
+  "emergencyLevel": "High",
+  "care": [
+    "Go to the emergency department immediately",
+    "Do not delay treatment"
+  ],
+  "followUp": [
+    "Did the symptoms start suddenly?",
+    "Have you recently had surgery or prolonged bed rest?"
+  ]
+},
+{
+  "id": "D025",
+  "name": "Angina",
+  "description": "Chest pain caused by reduced blood flow to the heart muscles.",
+  "symptoms": [
+    "Chest Pain",
+    "Chest Tightness",
+    "Shortness of Breath",
+    "Fatigue",
+    "Palpitations"
+  ],
+  "treatment": [
+    "Lifestyle Changes",
+    "Anti-anginal Medicines",
+    "Cardiac Evaluation"
+  ],
+  "suggestedMedicines": [
+    "Nitroglycerin",
+    "Aspirin",
+    "Metoprolol"
+  ],
+  "labTests": [
+    "ECG",
+    "Stress Test",
+    "Troponin"
+  ],
+  "specialist": "Cardiologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Avoid heavy physical exertion",
+    "Control blood pressure",
+    "Seek urgent medical care if pain persists"
+  ],
+  "followUp": [
+    "Does the chest pain occur during exercise?",
+    "Does it improve with rest?"
+  ]
+},
+{
+  "id": "D026",
+  "name": "Heart Failure",
+  "description": "A chronic condition in which the heart cannot pump blood efficiently to meet the body's needs.",
+  "symptoms": [
+    "Shortness of Breath",
+    "Fatigue",
+    "Leg Swelling",
+    "Foot Swelling",
+    "Rapid Heartbeat",
+    "Persistent Cough",
+    "Chest Discomfort"
+  ],
+  "treatment": [
+    "Lifestyle Modification",
+    "Diuretics",
+    "ACE Inhibitors",
+    "Beta Blockers"
+  ],
+  "suggestedMedicines": [
+    "Furosemide",
+    "Enalapril",
+    "Metoprolol"
+  ],
+  "labTests": [
+    "ECG",
+    "Echocardiogram",
+    "BNP Test",
+    "Chest X-Ray"
+  ],
+  "specialist": "Cardiologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Reduce salt intake",
+    "Monitor body weight daily",
+    "Take medicines regularly"
+  ],
+  "followUp": [
+    "Do you become breathless while lying flat?",
+    "Have your legs become swollen recently?"
+  ]
+},
+{
+  "id": "D027",
+  "name": "Coronary Artery Disease",
+  "description": "A condition where narrowed coronary arteries reduce blood flow to the heart muscle.",
+  "symptoms": [
+    "Chest Pain",
+    "Chest Tightness",
+    "Shortness of Breath",
+    "Fatigue",
+    "Palpitations"
+  ],
+  "treatment": [
+    "Lifestyle Changes",
+    "Medication",
+    "Angioplasty if required"
+  ],
+  "suggestedMedicines": [
+    "Aspirin",
+    "Atorvastatin",
+    "Nitroglycerin"
+  ],
+  "labTests": [
+    "ECG",
+    "Stress Test",
+    "Coronary Angiography",
+    "Troponin"
+  ],
+  "specialist": "Cardiologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Maintain healthy diet",
+    "Exercise regularly",
+    "Control blood pressure"
+  ],
+  "followUp": [
+    "Does chest pain increase during physical activity?",
+    "Do you have diabetes or high blood pressure?"
+  ]
+},
+{
+  "id": "D028",
+  "name": "Gastritis",
+  "description": "Inflammation of the stomach lining caused by infection, medicines, alcohol, or stress.",
+  "symptoms": [
+    "Upper Abdominal Pain",
+    "Nausea",
+    "Vomiting",
+    "Heartburn",
+    "Bloating",
+    "Loss of Appetite"
+  ],
+  "treatment": [
+    "Acid Suppression",
+    "Dietary Modification"
+  ],
+  "suggestedMedicines": [
+    "Pantoprazole",
+    "Omeprazole",
+    "Antacid"
+  ],
+  "labTests": [
+    "Upper GI Endoscopy",
+    "H. pylori Test"
+  ],
+  "specialist": "Gastroenterologist",
+  "emergencyLevel": "Low",
+  "care": [
+    "Avoid spicy foods",
+    "Avoid alcohol",
+    "Eat smaller meals"
+  ],
+  "followUp": [
+    "Does pain worsen after eating?",
+    "Do you frequently experience acidity?"
+  ]
+},
+{
+  "id": "D029",
+  "name": "Peptic Ulcer Disease",
+  "description": "Open sores that develop on the inner lining of the stomach or upper small intestine.",
+  "symptoms": [
+    "Upper Abdominal Pain",
+    "Heartburn",
+    "Nausea",
+    "Vomiting",
+    "Loss of Appetite",
+    "Weight Loss"
+  ],
+  "treatment": [
+    "Acid Suppression",
+    "H. pylori Eradication",
+    "Dietary Modification"
+  ],
+  "suggestedMedicines": [
+    "Pantoprazole",
+    "Amoxicillin",
+    "Clarithromycin"
+  ],
+  "labTests": [
+    "Upper GI Endoscopy",
+    "H. pylori Test",
+    "CBC"
+  ],
+  "specialist": "Gastroenterologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Avoid NSAID painkillers",
+    "Avoid alcohol",
+    "Eat regular meals"
+  ],
+  "followUp": [
+    "Is the pain relieved after eating?",
+    "Have you noticed black-colored stools?"
+  ]
+},
+{
+  "id": "D030",
+  "name": "GERD",
+  "description": "Gastroesophageal Reflux Disease is a chronic condition where stomach acid repeatedly flows back into the esophagus.",
+  "symptoms": [
+    "Heartburn",
+    "Acid Reflux",
+    "Chest Discomfort",
+    "Difficulty Swallowing",
+    "Chronic Cough",
+    "Hoarseness"
+  ],
+  "treatment": [
+    "Lifestyle Changes",
+    "Acid Suppression Therapy"
+  ],
+  "suggestedMedicines": [
+    "Pantoprazole",
+    "Esomeprazole",
+    "Antacid"
+  ],
+  "labTests": [
+    "Upper GI Endoscopy",
+    "24-Hour pH Monitoring"
+  ],
+  "specialist": "Gastroenterologist",
+  "emergencyLevel": "Low",
+  "care": [
+    "Avoid lying down after meals",
+    "Lose excess weight",
+    "Avoid spicy and oily foods"
+  ],
+  "followUp": [
+    "Do symptoms worsen after eating?",
+    "Do you experience heartburn at night?"
+  ]
+},
+{
+  "id": "D031",
+  "name": "Hyperthyroidism",
+  "description": "A condition in which the thyroid gland produces excessive thyroid hormones, speeding up the body's metabolism.",
+  "symptoms": [
+    "Weight Loss",
+    "Rapid Heartbeat",
+    "Palpitations",
+    "Hand Tremor",
+    "Excessive Sweating",
+    "Difficulty Sleeping",
+    "Fatigue"
+  ],
+  "treatment": [
+    "Anti-thyroid Medication",
+    "Radioactive Iodine Therapy",
+    "Surgery (if required)"
+  ],
+  "suggestedMedicines": [
+    "Methimazole",
+    "Propylthiouracil",
+    "Propranolol"
+  ],
+  "labTests": [
+    "TSH",
+    "Free T3",
+    "Free T4"
+  ],
+  "specialist": "Endocrinologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Avoid excessive iodine intake",
+    "Take medicines regularly",
+    "Attend follow-up appointments"
+  ],
+  "followUp": [
+    "Have you lost weight without trying?",
+    "Do you often feel your heart racing?"
+  ]
+},
+{
+  "id": "D032",
+  "name": "Hypothyroidism",
+  "description": "A condition where the thyroid gland does not produce enough thyroid hormones.",
+  "symptoms": [
+    "Fatigue",
+    "Weight Gain",
+    "Cold Hands",
+    "Cold Feet",
+    "Dry Skin",
+    "Constipation",
+    "Slow Heartbeat"
+  ],
+  "treatment": [
+    "Thyroid Hormone Replacement"
+  ],
+  "suggestedMedicines": [
+    "Levothyroxine"
+  ],
+  "labTests": [
+    "TSH",
+    "Free T4"
+  ],
+  "specialist": "Endocrinologist",
+  "emergencyLevel": "Low",
+  "care": [
+    "Take medicine on an empty stomach",
+    "Follow thyroid function regularly"
+  ],
+  "followUp": [
+    "Do you frequently feel cold?",
+    "Have you gained weight recently?"
+  ]
+},
+{
+  "id": "D033",
+  "name": "Prediabetes",
+  "description": "A condition where blood sugar levels are higher than normal but not high enough for diabetes.",
+  "symptoms": [
+    "Excessive Thirst",
+    "Frequent Urination",
+    "Fatigue",
+    "Weight Gain"
+  ],
+  "treatment": [
+    "Lifestyle Modification",
+    "Diet Control",
+    "Regular Exercise"
+  ],
+  "suggestedMedicines": [
+    "Metformin (if advised)"
+  ],
+  "labTests": [
+    "HbA1c",
+    "Fasting Blood Sugar",
+    "OGTT"
+  ],
+  "specialist": "Endocrinologist",
+  "emergencyLevel": "Low",
+  "care": [
+    "Maintain healthy weight",
+    "Exercise daily",
+    "Reduce sugar intake"
+  ],
+  "followUp": [
+    "Do you have a family history of diabetes?",
+    "Have you recently gained weight?"
+  ]
+},
+{
+  "id": "D034",
+  "name": "Chronic Kidney Disease",
+  "description": "A long-term condition where the kidneys gradually lose their ability to filter waste from the blood.",
+  "symptoms": [
+    "Fatigue",
+    "Leg Swelling",
+    "Foot Swelling",
+    "Frequent Urination",
+    "Loss of Appetite",
+    "Nausea"
+  ],
+  "treatment": [
+    "Blood Pressure Control",
+    "Dietary Modification",
+    "Dialysis (advanced cases)"
+  ],
+  "suggestedMedicines": [
+    "Losartan",
+    "Furosemide"
+  ],
+  "labTests": [
+    "Serum Creatinine",
+    "Blood Urea",
+    "eGFR",
+    "Urine Routine"
+  ],
+  "specialist": "Nephrologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Reduce salt intake",
+    "Control diabetes",
+    "Monitor kidney function regularly"
+  ],
+  "followUp": [
+    "Do you have diabetes or high blood pressure?",
+    "Have you noticed swelling in your legs?"
+  ]
+},
+{
+  "id": "D035",
+  "name": "Kidney Stones",
+  "description": "Hard mineral deposits that form inside the kidneys and may cause severe pain during passage.",
+  "symptoms": [
+    "Severe Back Pain",
+    "Lower Abdominal Pain",
+    "Blood In Urine",
+    "Burning Urination",
+    "Nausea",
+    "Vomiting"
+  ],
+  "treatment": [
+    "Pain Relief",
+    "Hydration",
+    "Stone Removal (if required)"
+  ],
+  "suggestedMedicines": [
+    "Tamsulosin",
+    "Ibuprofen"
+  ],
+  "labTests": [
+    "Urine Routine",
+    "Ultrasound KUB",
+    "CT KUB"
+  ],
+  "specialist": "Urologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Drink plenty of water",
+    "Reduce excess salt intake",
+    "Follow dietary advice"
+  ],
+  "followUp": [
+    "Is the pain coming in waves?",
+    "Have you noticed blood in your urine?"
+  ]
+},
+{
+  "id": "D036",
+  "name": "Migraine",
+  "description": "A neurological condition causing repeated episodes of severe headache, often with sensitivity to light and nausea.",
+  "symptoms": [
+    "Severe Headache",
+    "Sensitivity to Light",
+    "Nausea",
+    "Vomiting",
+    "Dizziness",
+    "Fatigue"
+  ],
+  "treatment": [
+    "Pain Management",
+    "Trigger Avoidance",
+    "Preventive Therapy"
+  ],
+  "suggestedMedicines": [
+    "Sumatriptan",
+    "Paracetamol",
+    "Ibuprofen"
+  ],
+  "labTests": [
+    "Neurological Examination",
+    "MRI Brain (if required)"
+  ],
+  "specialist": "Neurologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Maintain regular sleep",
+    "Avoid known triggers",
+    "Stay hydrated"
+  ],
+  "followUp": [
+    "Is the headache usually on one side?",
+    "Does light make the headache worse?"
+  ]
+},
+{
+  "id": "D037",
+  "name": "Bell's Palsy",
+  "description": "A temporary weakness or paralysis of facial muscles caused by inflammation of the facial nerve.",
+  "symptoms": [
+    "Facial Weakness",
+    "Difficulty Speaking",
+    "Eye Discomfort",
+    "Loss of Taste",
+    "Headache"
+  ],
+  "treatment": [
+    "Corticosteroids",
+    "Eye Protection",
+    "Physical Therapy"
+  ],
+  "suggestedMedicines": [
+    "Prednisolone",
+    "Antiviral Medicine (if advised)"
+  ],
+  "labTests": [
+    "Physical Examination",
+    "MRI (if required)"
+  ],
+  "specialist": "Neurologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Protect the affected eye",
+    "Follow physiotherapy advice"
+  ],
+  "followUp": [
+    "Did facial weakness start suddenly?",
+    "Is one side of your face affected?"
+  ]
+},
+{
+  "id": "D038",
+  "name": "Osteoarthritis",
+  "description": "A degenerative joint disease caused by breakdown of cartilage, leading to pain and stiffness.",
+  "symptoms": [
+    "Joint Pain",
+    "Joint Swelling",
+    "Stiffness",
+    "Bone Pain",
+    "Difficulty Moving"
+  ],
+  "treatment": [
+    "Physical Therapy",
+    "Pain Management",
+    "Weight Management"
+  ],
+  "suggestedMedicines": [
+    "Paracetamol",
+    "Topical NSAID Gel"
+  ],
+  "labTests": [
+    "X-Ray",
+    "Joint Examination"
+  ],
+  "specialist": "Orthopedic Doctor",
+  "emergencyLevel": "Low",
+  "care": [
+    "Exercise regularly",
+    "Maintain healthy weight",
+    "Avoid excessive joint stress"
+  ],
+  "followUp": [
+    "Does pain increase with movement?",
+    "Which joint is affected?"
+  ]
+},
+{
+  "id": "D039",
+  "name": "Rheumatoid Arthritis",
+  "description": "An autoimmune disease where the body's immune system attacks joints, causing inflammation and pain.",
+  "symptoms": [
+    "Joint Pain",
+    "Joint Swelling",
+    "Morning Stiffness",
+    "Fatigue",
+    "Weakness"
+  ],
+  "treatment": [
+    "Disease Modifying Medicines",
+    "Physical Therapy",
+    "Pain Control"
+  ],
+  "suggestedMedicines": [
+    "Methotrexate",
+    "Hydroxychloroquine"
+  ],
+  "labTests": [
+    "Rheumatoid Factor",
+    "Anti-CCP Antibody",
+    "ESR"
+  ],
+  "specialist": "Rheumatologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Regular exercise",
+    "Follow treatment plan",
+    "Maintain joint mobility"
+  ],
+  "followUp": [
+    "Are multiple joints painful?",
+    "Is stiffness worse in the morning?"
+  ]
+},
+{
+  "id": "D040",
+  "name": "Breast Cancer",
+  "description": "A cancer that develops in breast tissue and may form a lump or other changes.",
+  "symptoms": [
+    "Breast Lump",
+    "Swelling",
+    "Pain",
+    "Skin Changes",
+    "Fatigue",
+    "Weight Loss"
+  ],
+  "treatment": [
+    "Surgery",
+    "Chemotherapy",
+    "Radiation Therapy"
+  ],
+  "suggestedMedicines": [
+    "Hormonal Therapy",
+    "Targeted Therapy"
+  ],
+  "labTests": [
+    "Mammography",
+    "Breast Ultrasound",
+    "Biopsy"
+  ],
+  "specialist": "Oncologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Regular screening",
+    "Follow specialist advice",
+    "Report unusual changes early"
+  ],
+  "followUp": [
+    "Have you noticed a new lump?",
+    "Has there been any unusual breast change?"
+  ]
+},
+{
+  "id": "D041",
+  "name": "Lung Cancer",
+  "description": "A cancer that begins in the lungs and may affect breathing and overall health.",
+  "symptoms": [
+    "Persistent Cough",
+    "Coughing Blood",
+    "Chest Pain",
+    "Shortness of Breath",
+    "Weight Loss",
+    "Fatigue"
+  ],
+  "treatment": [
+    "Surgery",
+    "Chemotherapy",
+    "Radiation Therapy",
+    "Targeted Therapy"
+  ],
+  "suggestedMedicines": [
+    "Targeted Cancer Therapy",
+    "Immunotherapy"
+  ],
+  "labTests": [
+    "Chest CT Scan",
+    "Bronchoscopy",
+    "Biopsy"
+  ],
+  "specialist": "Oncologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Avoid smoking",
+    "Regular follow-up",
+    "Maintain nutrition"
+  ],
+  "followUp": [
+    "Has the cough lasted for several weeks?",
+    "Have you noticed unexplained weight loss?"
+  ]
+},
+{
+  "id": "D042",
+  "name": "Tuberculosis",
+  "description": "A bacterial infection that commonly affects the lungs and spreads through the air.",
+  "symptoms": [
+    "Persistent Cough",
+    "Coughing Blood",
+    "Fever",
+    "Night Sweats",
+    "Weight Loss",
+    "Fatigue"
+  ],
+  "treatment": [
+    "Long-term Antibiotic Therapy",
+    "Medical Monitoring"
+  ],
+  "suggestedMedicines": [
+    "Isoniazid",
+    "Rifampicin",
+    "Pyrazinamide",
+    "Ethambutol"
+  ],
+  "labTests": [
+    "Sputum Test",
+    "Chest X-Ray",
+    "CBNAAT"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Complete the full treatment course",
+    "Maintain hygiene",
+    "Avoid spreading infection"
+  ],
+  "followUp": [
+    "Has your cough lasted more than three weeks?",
+    "Do you have night sweating or weight loss?"
+  ]
+},
+{
+  "id": "D043",
+  "name": "Malaria",
+  "description": "A mosquito-borne infectious disease caused by Plasmodium parasites.",
+  "symptoms": [
+    "High Fever",
+    "Chills",
+    "Sweating",
+    "Headache",
+    "Fatigue",
+    "Body Pain",
+    "Nausea"
+  ],
+  "treatment": [
+    "Antimalarial Medication",
+    "Hydration",
+    "Fever Management"
+  ],
+  "suggestedMedicines": [
+    "Artemisinin Combination Therapy",
+    "Paracetamol"
+  ],
+  "labTests": [
+    "Malaria Parasite Test",
+    "Rapid Diagnostic Test",
+    "CBC"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Prevent mosquito bites",
+    "Stay hydrated",
+    "Monitor fever"
+  ],
+  "followUp": [
+    "Do fever episodes come with chills?",
+    "Have you recently visited a mosquito-prone area?"
+  ]
+},
+{
+  "id": "D044",
+  "name": "Dengue",
+  "description": "A viral infection transmitted by mosquitoes that can reduce platelet count.",
+  "symptoms": [
+    "High Fever",
+    "Headache",
+    "Body Pain",
+    "Joint Pain",
+    "Skin Rash",
+    "Fatigue",
+    "Nausea"
+  ],
+  "treatment": [
+    "Hydration",
+    "Fever Management",
+    "Medical Monitoring"
+  ],
+  "suggestedMedicines": [
+    "Paracetamol",
+    "ORS"
+  ],
+  "labTests": [
+    "Dengue NS1",
+    "Dengue IgM",
+    "CBC"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Drink plenty of fluids",
+    "Monitor platelet count",
+    "Avoid self-medication"
+  ],
+  "followUp": [
+    "Is there severe body pain?",
+    "Have platelet levels decreased?"
+  ]
+},
+{
+  "id": "D045",
+  "name": "Typhoid",
+  "description": "A bacterial infection caused by Salmonella Typhi, usually spread through contaminated food and water.",
+  "symptoms": [
+    "Persistent Fever",
+    "Headache",
+    "Weakness",
+    "Abdominal Pain",
+    "Loss of Appetite",
+    "Diarrhea"
+  ],
+  "treatment": [
+    "Antibiotic Therapy",
+    "Hydration",
+    "Rest"
+  ],
+  "suggestedMedicines": [
+    "Cefixime",
+    "Azithromycin"
+  ],
+  "labTests": [
+    "Typhoid Test",
+    "Blood Culture",
+    "CBC"
+  ],
+  "specialist": "General Physician",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Drink clean water",
+    "Eat properly cooked food",
+    "Complete antibiotics course"
+  ],
+  "followUp": [
+    "Has fever continued for more than five days?",
+    "Have you eaten outside recently?"
+  ]
+},
+{
+  "id": "D046",
+  "name": "Pneumonia",
+  "description": "An infection that causes inflammation of the air sacs in the lungs.",
+  "symptoms": [
+    "Fever",
+    "Persistent Cough",
+    "Productive Cough",
+    "Chest Pain",
+    "Difficulty Breathing",
+    "Fatigue"
+  ],
+  "treatment": [
+    "Antibiotics (if bacterial)",
+    "Hydration",
+    "Rest"
+  ],
+  "suggestedMedicines": [
+    "Amoxicillin",
+    "Azithromycin",
+    "Paracetamol"
+  ],
+  "labTests": [
+    "Chest X-Ray",
+    "CBC",
+    "Sputum Test"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "High",
+  "care": [
+    "Take complete treatment",
+    "Stay hydrated",
+    "Monitor breathing difficulty"
+  ],
+  "followUp": [
+    "Is breathing becoming difficult?",
+    "Has fever continued for several days?"
+  ]
+},
+{
+  "id": "D047",
+  "name": "Asthma",
+  "description": "A chronic respiratory condition causing narrowing and inflammation of airways.",
+  "symptoms": [
+    "Wheezing",
+    "Shortness of Breath",
+    "Chest Tightness",
+    "Persistent Cough",
+    "Difficulty Breathing"
+  ],
+  "treatment": [
+    "Inhalers",
+    "Trigger Avoidance",
+    "Breathing Exercises"
+  ],
+  "suggestedMedicines": [
+    "Salbutamol Inhaler",
+    "Budesonide Inhaler"
+  ],
+  "labTests": [
+    "Spirometry",
+    "Peak Flow Test"
+  ],
+  "specialist": "Pulmonologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Avoid smoke and allergens",
+    "Keep inhaler available",
+    "Follow asthma action plan"
+  ],
+  "followUp": [
+    "Do symptoms worsen at night?",
+    "Are there known allergy triggers?"
+  ]
+},
+{
+  "id": "D048",
+  "name": "Appendicitis",
+  "description": "Inflammation of the appendix that may require urgent medical treatment.",
+  "symptoms": [
+    "Right Lower Abdominal Pain",
+    "Fever",
+    "Nausea",
+    "Vomiting",
+    "Loss of Appetite"
+  ],
+  "treatment": [
+    "Surgery",
+    "Antibiotics",
+    "Pain Management"
+  ],
+  "suggestedMedicines": [
+    "Antibiotics (as prescribed)",
+    "Paracetamol"
+  ],
+  "labTests": [
+    "Ultrasound Abdomen",
+    "CT Scan",
+    "CBC"
+  ],
+  "specialist": "General Surgeon",
+  "emergencyLevel": "High",
+  "care": [
+    "Seek medical attention quickly",
+    "Avoid delaying treatment"
+  ],
+  "followUp": [
+    "Did pain start near the stomach and move to the right side?",
+    "Is the pain increasing?"
+  ]
+},
+{
+  "id": "D049",
+  "name": "Urinary Tract Infection",
+  "description": "An infection affecting parts of the urinary system, commonly the bladder.",
+  "symptoms": [
+    "Burning Urination",
+    "Frequent Urination",
+    "Painful Urination",
+    "Lower Abdominal Pain",
+    "Cloudy Urine"
+  ],
+  "treatment": [
+    "Antibiotics",
+    "Hydration"
+  ],
+  "suggestedMedicines": [
+    "Nitrofurantoin",
+    "Cefixime"
+  ],
+  "labTests": [
+    "Urine Routine",
+    "Urine Culture"
+  ],
+  "specialist": "Urologist",
+  "emergencyLevel": "Medium",
+  "care": [
+    "Drink adequate water",
+    "Maintain hygiene",
+    "Do not delay urination"
+  ],
+  "followUp": [
+    "Is there burning while urinating?",
+    "Have you noticed cloudy urine?"
+  ]
+},
+{
+  "id": "D050",
+  "name": "Skin Allergy",
+  "description": "An allergic reaction of the skin causing irritation, itching, or rash.",
+  "symptoms": [
+    "Skin Rash",
+    "Itching",
+    "Redness",
+    "Swelling",
+    "Dry Skin"
+  ],
+  "treatment": [
+    "Avoid Allergens",
+    "Antihistamines",
+    "Skin Care"
+  ],
+  "suggestedMedicines": [
+    "Cetirizine",
+    "Calamine Lotion"
+  ],
+  "labTests": [
+    "Allergy Test",
+    "Clinical Examination"
+  ],
+  "specialist": "Dermatologist",
+  "emergencyLevel": "Low",
+  "care": [
+    "Avoid known allergens",
+    "Keep skin moisturized",
+    "Avoid scratching"
+  ],
+  "followUp": [
+    "Did the rash appear after contact with something new?",
+    "Is itching getting worse?"
+  ]
+}
+]

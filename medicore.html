@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MEDI-CORE AI</title>
+
+    <link rel="stylesheet" href="medicore.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+
+    <header>
+
+        <div class="logo">
+
+            <img src="Vytalyn Logo.png" alt="MEDI-CORE AI">
+
+            <div>
+
+                <h1>MEDI-CORE AI</h1>
+
+                <p>Intelligent Healthcare Analysis System</p>
+            </div>
+
+        </div>
+
+    </header>
+
+    <!-- Select Analysis -->
+
+    <section class="selection">
+
+        <h2>Select Analysis Type</h2>
+
+        <div class="option-grid">
+
+            <div class="option-card" id="symptomsBtn">
+
+                <i class="fa-solid fa-stethoscope"></i>
+
+                <h3>Symptoms</h3>
+
+                <p>Analyze symptoms and predict the most likely disease.</p>
+
+            </div>
+
+
+            <div class="option-card" id="reportBtn">
+
+                <i class="fa-solid fa-file-medical"></i>
+
+                <h3>Medical Report</h3>
+
+                <p>Upload and explain laboratory reports.</p>
+
+            </div>
+
+            <div class="option-card" id="medicineBtn">
+
+                <i class="fa-solid fa-pills"></i>
+
+                <h3>Medicine</h3>
+
+                <p>Search medicines, uses and precautions.</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Workspace -->
+
+<section id="workspace">
+
+<div class="readyBox">
+
+<div class="brainIcon">
+🧠
+</div>
+
+<h2>
+MEDI-CORE AI Engine Ready
+</h2>
+
+<p>
+Select a module to begin intelligent healthcare analysis.
+</p>
+
+
+<div class="readyFeatures">
+
+<div class="readyFeature">
+✔ Disease Database
+</div>
+
+<div class="readyFeature">
+✔ Medicine Knowledge
+</div>
+
+<div class="readyFeature">
+✔ Report Analysis
+</div>
+
+</div>
+
+</div>
+
+</section>
+    <!-- Result -->
+
+    <section id="resultSection" class="hidden">
+
+        <div class="result-card">
+
+            <h2>MEDI-CORE AI ANALYSIS</h2>
+
+            <div class="result">
+
+                <div class="row">
+
+                    <span>Most Likely Condition</span>
+
+                    <strong id="diseaseName">--</strong>
+
+                </div>
+
+                <div class="row">
+
+                    <span>Confidence</span>
+
+                    <strong id="confidence">--%</strong>
+
+                </div>
+
+                <div class="row">
+
+                    <span>Treatment Overview</span>
+
+                    <strong id="treatment">--</strong>
+
+                </div>
+
+                <div class="row">
+
+                    <span>Recommended Specialist</span>
+
+                    <strong id="specialist">--</strong>
+
+                </div>
+
+                <div class="row">
+
+                    <span>Emergency Level</span>
+
+                    <strong id="emergency">--</strong>
+
+                </div>
+
+            </div>
+
+            <button id="newAnalysis">
+
+                <i class="fa-solid fa-rotate-right"></i>
+
+                New Analysis
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- Disclaimer -->
+
+    <footer>
+
+        <div class="warning">
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            <p>
+
+                This assessment is generated using the MEDI-CORE AI medical
+                knowledge database. It is intended only for educational and
+                decision-support purposes and must not be considered a medical
+                diagnosis. Always consult a qualified healthcare professional.
+
+            </p>
+
+        </div>
+
+    </footer>
+
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="reportDatabase.js"></script>
+
+<script src="databaseEngine.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+
+<script src="medicore.js"></script>
+
+</body>
+
+</html>
