@@ -1087,19 +1087,32 @@ function openSymptoms(){
     // Collect every unique symptom
     //--------------------------------------------------
 
-    const symptomSet=new Set();
 
-    diseases.forEach(disease=>{
+const symptomSet = new Set();
 
-        if(!disease.symptoms) return;
+diseases.forEach(disease => {
 
-        disease.symptoms.forEach(symptom=>{
+    if (disease.coreSymptoms) {
 
-            symptomSet.add(symptom);
+        disease.coreSymptoms.forEach(symptom => {
+
+            symptomSet.add(symptom.name);
 
         });
 
-    });
+    }
+
+    if (disease.secondarySymptoms) {
+
+        disease.secondarySymptoms.forEach(symptom => {
+
+            symptomSet.add(symptom.name);
+
+        });
+
+    }
+
+});
 
     const symptoms=[...symptomSet].sort();
 
