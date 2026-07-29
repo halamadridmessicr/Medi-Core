@@ -190,8 +190,6 @@ if(typeof diseases!=="undefined"){
 
 diseaseDatabase=diseases;
 
-loadSymptoms();
-
 console.log("Disease database loaded.");
 
 }
