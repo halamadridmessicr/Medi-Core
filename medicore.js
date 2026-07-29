@@ -303,156 +303,218 @@ Select a module to begin intelligent healthcare analysis.
 // PART 3
 // AI DIAGNOSIS ENGINE
 //======================================================
-
 function analyzeSymptoms(){
 
-    if(selectedSymptoms.length===0){
+    if(selectedSymptoms.length === 0){
 
-        alert(
-
-        "Please select at least one symptom."
-
-        );
-
+        alert("Please select at least one symptom.");
         return;
 
     }
 
-    let results=[];
+    let results = [];
 
     diseases.forEach(disease=>{
 
-        if(!disease.symptoms) return;
+        let score = 0;
 
-        //------------------------------------------------
-        // Count matched symptoms
-        //------------------------------------------------
+        let matchedCore = [];
+        let matchedSecondary = [];
+        let matchedNegative = [];
 
-        let matched=[];
+        let maxPossibleScore = 0;
 
-        disease.symptoms.forEach(symptom=>{
+        //--------------------------------------------------
+        // CORE SYMPTOMS
+        //--------------------------------------------------
 
-            if(selectedSymptoms.includes(symptom)){
+        if(disease.coreSymptoms){
 
-                matched.push(symptom);
+            disease.coreSymptoms.forEach(symptom=>{
 
-            }
+                maxPossibleScore += symptom.weight;
 
-        });
+                if(
+                    selectedSymptoms
+                    .map(s=>s.toLowerCase())
+                    .includes(symptom.name.toLowerCase())
+                ){
 
-        if(matched.length===0) return;
+                    score += symptom.weight;
+                    matchedCore.push(symptom.name);
 
-        //------------------------------------------------
-        // Confidence
-        //------------------------------------------------
+                }
 
-        let confidence=Math.round(
-
-        (matched.length/
-
-        disease.symptoms.length)
-
-        *100
-
-        );
-
-        //------------------------------------------------
-        // Ignore poor matches
-        //------------------------------------------------
-
-        if(confidence<25) return;
-
-        //------------------------------------------------
-        // Save
-        //------------------------------------------------
-
-        results.push({
-
-            disease:disease,
-
-            matchedSymptoms:matched,
-
-            matchedCount:matched.length,
-
-            totalSymptoms:
-
-            disease.symptoms.length,
-
-            confidence:confidence
-
-        });
-
-    });
-
-    //----------------------------------------------------
-    // Sort
-    //----------------------------------------------------
-
-    results.sort(
-
-    (a,b)=>{
-
-        if(
-
-        b.confidence!==
-
-        a.confidence
-
-        ){
-
-            return
-
-            b.confidence-
-
-            a.confidence;
+            });
 
         }
 
-        return
+        //--------------------------------------------------
+        // SECONDARY SYMPTOMS
+        //--------------------------------------------------
 
-        b.matchedCount-
+        if(disease.secondarySymptoms){
 
-        a.matchedCount;
+            disease.secondarySymptoms.forEach(symptom=>{
+
+                maxPossibleScore += symptom.weight;
+
+                if(
+                    selectedSymptoms
+                    .map(s=>s.toLowerCase())
+                    .includes(symptom.name.toLowerCase())
+                ){
+
+                    score += symptom.weight;
+                    matchedSecondary.push(symptom.name);
+
+                }
+
+            });
+
+        }
+
+        //--------------------------------------------------
+        // NEGATIVE SYMPTOMS
+        //--------------------------------------------------
+
+        if(disease.negativeSymptoms){
+
+            disease.negativeSymptoms.forEach(symptom=>{
+
+                if(
+                    selectedSymptoms
+                    .map(s=>s.toLowerCase())
+                    .includes(symptom.toLowerCase())
+                ){
+
+                    score -= 8;
+                    matchedNegative.push(symptom);
+
+                }
+
+            });
+
+        }
+
+        //--------------------------------------------------
+        // MINIMUM MATCH REQUIREMENT
+        //--------------------------------------------------
+
+        const totalMatched =
+            matchedCore.length +
+            matchedSecondary.length;
+
+        if(totalMatched === 0) return;
+
+        //--------------------------------------------------
+        // CONFIDENCE
+        //--------------------------------------------------
+
+        let confidence = Math.round(
+            (score / maxPossibleScore) * 100
+        );
+
+        if(confidence < 0)
+            confidence = 0;
+
+        if(confidence > 100)
+            confidence = 100;
+
+        //--------------------------------------------------
+        // CORE SYMPTOM BOOST
+        //--------------------------------------------------
+
+        if(
+            disease.coreSymptoms &&
+            matchedCore.length >=
+            Math.ceil(
+                disease.coreSymptoms.length * 0.6
+            )
+        ){
+
+            confidence += 10;
+
+        }
+
+        if(confidence > 100)
+            confidence = 100;
+
+        //--------------------------------------------------
+        // REJECT POOR MATCHES
+        //--------------------------------------------------
+
+        if(confidence < 20)
+            return;
+
+        //--------------------------------------------------
+        // SAVE RESULT
+        //--------------------------------------------------
+
+        results.push({
+
+            disease : disease,
+
+            confidence : confidence,
+
+            score : score,
+
+            matchedCore : matchedCore,
+
+            matchedSecondary : matchedSecondary,
+
+            matchedNegative : matchedNegative,
+
+            totalMatched : totalMatched
+
+        });
 
     });
 
-    //----------------------------------------------------
-    // Nothing found
-    //----------------------------------------------------
+    //--------------------------------------------------
+    // SORT
+    //--------------------------------------------------
 
-    if(results.length===0){
+    results.sort((a,b)=>{
 
-        workspace.innerHTML=`
+        if(
+            b.confidence !== a.confidence
+        ){
+
+            return b.confidence -
+                   a.confidence;
+
+        }
+
+        return b.score - a.score;
+
+    });
+
+    //--------------------------------------------------
+    // NO MATCH
+    //--------------------------------------------------
+
+    if(results.length === 0){
+
+        workspace.innerHTML = `
 
         <div class="moduleCard">
 
-        <h2>
+            <h2>
+            ❌ No Strong Match Found
+            </h2>
 
-        ❌ No Disease Match
+            <p>
+            MEDI-CORE AI could not find
+            a reliable diagnosis.
+            </p>
 
-        </h2>
-
-        <p>
-
-        MEDI-CORE AI
-
-        could not find a disease
-
-        matching the selected symptoms.
-
-        </p>
-
-        <button
-
-        class="primaryBtn"
-
-        onclick="openSymptoms()"
-
-        >
-
-        Try Again
-
-        </button>
+            <button
+            class="primaryBtn"
+            onclick="openSymptoms()"
+            >
+            Try Again
+            </button>
 
         </div>
 
@@ -462,33 +524,28 @@ function analyzeSymptoms(){
 
     }
 
-    //----------------------------------------------------
-    // Best Disease Only
-    //----------------------------------------------------
+    //--------------------------------------------------
+    // TOP RESULT
+    //--------------------------------------------------
 
-    currentDiagnosis=
+    currentDiagnosis = results[0];
 
-    results[0];
-
-    //----------------------------------------------------
-    // Need follow-up?
-    //----------------------------------------------------
+    //--------------------------------------------------
+    // FOLLOW UP QUESTIONS
+    //--------------------------------------------------
 
     if(
 
-    currentDiagnosis.confidence
+        currentDiagnosis.confidence < 80 &&
 
-    <85
+        currentDiagnosis.disease.followUpQuestions &&
 
-    &&
-
-    currentDiagnosis.disease.followUp
-
-    &&
-
-    currentDiagnosis.disease.followUp.length>0
+        currentDiagnosis.disease.followUpQuestions.length > 0
 
     ){
+
+        pendingQuestions =
+        currentDiagnosis.disease.followUpQuestions;
 
         showFollowUpQuestions();
 
