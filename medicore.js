@@ -189,7 +189,7 @@ function loadDatabase(){
 if(typeof diseases!=="undefined"){
 
 diseaseDatabase=diseases;
-buildSymptomDatabase();
+
 loadSymptoms();
 
 console.log("Disease database loaded.");
