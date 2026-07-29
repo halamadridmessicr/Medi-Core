@@ -1,2271 +1,1313 @@
 [
-  {
-    "id": "D001",
-    "name": "Common Cold",
-    "category": "Infection",
-    "severity": "Low",
-    "description": "A viral infection affecting the upper respiratory tract, commonly causing nasal and throat symptoms.",
-
-    "symptoms": [
-      {"name": "runny nose", "weight": 4},
-      {"name": "sneezing", "weight": 4},
-      {"name": "sore throat", "weight": 3},
-      {"name": "mild cough", "weight": 3},
-      {"name": "nasal congestion", "weight": 3},
-      {"name": "fatigue", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "blocked nose",
-      "cold symptoms",
-      "throat irritation"
-    ],
-
-    "negativeSymptoms": [
-      "very high fever",
-      "severe breathing difficulty",
-      "chest pain"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have sneezing and runny nose?",
-        "yesScore": 5,
-        "noScore": 0
-      },
-      {
-        "question": "Is your cough mild?",
-        "yesScore": 3,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M001"],
-
-    "doctorAdvice": "Usually improves with rest and supportive care. Seek medical advice if symptoms become severe."
-  },
-
-
-  {
-    "id": "D002",
-    "name": "Influenza (Flu)",
-    "category": "Infection",
-    "severity": "Moderate",
-    "description": "A viral respiratory infection causing fever, body pain, cough and weakness.",
-
-    "symptoms": [
-      {"name": "high fever", "weight": 5},
-      {"name": "body pain", "weight": 5},
-      {"name": "dry cough", "weight": 4},
-      {"name": "fatigue", "weight": 3},
-      {"name": "headache", "weight": 3},
-      {"name": "chills", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "flu",
-      "weakness",
-      "fever"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "light sensitivity"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have high fever with body pain?",
-        "yesScore": 6,
-        "noScore": 0
-      },
-      {
-        "question": "Did symptoms appear suddenly?",
-        "yesScore": 4,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M002"],
-
-    "doctorAdvice": "Rest, hydration and medical consultation are recommended if symptoms worsen."
-  },
-
-
-  {
-    "id": "D003",
-    "name": "COVID-19",
-    "category": "Infection",
-    "severity": "Moderate",
-    "description": "A viral respiratory disease caused by coronavirus infection.",
-
-    "symptoms": [
-      {"name": "fever", "weight": 4},
-      {"name": "dry cough", "weight": 5},
-      {"name": "fatigue", "weight": 3},
-      {"name": "loss of smell", "weight": 5},
-      {"name": "loss of taste", "weight": 5},
-      {"name": "body pain", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "viral infection",
-      "respiratory symptoms"
-    ],
-
-    "negativeSymptoms": [
-      "only stomach pain",
-      "only skin symptoms"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have you experienced loss of smell or taste?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have dry cough?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M003"],
-
-    "doctorAdvice": "Follow medical guidelines and consult healthcare professionals when required."
-  },
-
-
-  {
-    "id": "D004",
-    "name": "Migraine",
-    "category": "Neurological",
-    "severity": "Moderate",
-    "description": "A neurological condition causing intense headache episodes with sensory sensitivity.",
-
-    "symptoms": [
-      {"name": "severe headache", "weight": 5},
-      {"name": "light sensitivity", "weight": 5},
-      {"name": "sound sensitivity", "weight": 5},
-      {"name": "nausea", "weight": 4},
-      {"name": "vomiting", "weight": 3},
-      {"name": "headache", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "head pain",
-      "head attack"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "skin rash"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Does light make your headache worse?",
-        "yesScore": 6,
-        "noScore": 0
-      },
-      {
-        "question": "Does sound increase discomfort?",
-        "yesScore": 6,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M004"],
-
-    "doctorAdvice": "Recurring or severe headaches should be evaluated by a healthcare professional."
-  },
-
-
-  {
-    "id": "D005",
-    "name": "Tension Headache",
-    "category": "Neurological",
-    "severity": "Low",
-    "description": "A common headache caused by stress, muscle tension or fatigue.",
-
-    "symptoms": [
-      {"name": "mild headache", "weight": 4},
-      {"name": "head pressure", "weight": 4},
-      {"name": "neck stiffness", "weight": 3},
-      {"name": "stress", "weight": 3},
-      {"name": "fatigue", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "pressure headache",
-      "stress headache"
-    ],
-
-    "negativeSymptoms": [
-      "vomiting",
-      "light sensitivity",
-      "high fever"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Does the headache feel like pressure around the head?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M005"],
-
-    "doctorAdvice": "Managing stress, rest and proper hydration may help. Consult a doctor for persistent headaches."
-  }
-]
-[
-  {
-    "id": "D006",
-    "name": "Acute Gastroenteritis",
-    "category": "Digestive",
-    "severity": "Moderate",
-    "description": "Inflammation of the stomach and intestine commonly caused by viral infections or contaminated food.",
-
-    "symptoms": [
-      {"name": "diarrhea", "weight": 5},
-      {"name": "vomiting", "weight": 5},
-      {"name": "abdominal cramps", "weight": 4},
-      {"name": "nausea", "weight": 3},
-      {"name": "mild fever", "weight": 2},
-      {"name": "dehydration", "weight": 4}
-    ],
-
-    "commonSymptoms": [
-      "stomach infection",
-      "loose motion",
-      "upset stomach"
-    ],
-
-    "negativeSymptoms": [
-      "light sensitivity",
-      "sound sensitivity",
-      "skin rash"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Are you experiencing diarrhea?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Did vomiting start suddenly?",
-        "yesScore": 4,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M006"],
-
-    "doctorAdvice": "Maintain hydration and seek medical attention if dehydration or severe symptoms occur."
-  },
-
-
-  {
-    "id": "D007",
-    "name": "Food Poisoning",
-    "category": "Digestive",
-    "severity": "Moderate",
-    "description": "Illness caused by consuming contaminated food containing harmful microorganisms or toxins.",
-
-    "symptoms": [
-      {"name": "vomiting", "weight": 5},
-      {"name": "diarrhea", "weight": 5},
-      {"name": "stomach pain", "weight": 4},
-      {"name": "nausea", "weight": 4},
-      {"name": "fever", "weight": 2},
-      {"name": "weakness", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "food infection",
-      "food-related illness"
-    ],
-
-    "negativeSymptoms": [
-      "light sensitivity",
-      "sound sensitivity",
-      "long-term symptoms"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Did symptoms begin after eating suspicious food?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Are you having loose stools?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M007"],
-
-    "doctorAdvice": "Drink fluids and seek medical help if symptoms are severe or prolonged."
-  },
-
-
-  {
-    "id": "D008",
-    "name": "Viral Fever",
-    "category": "Infection",
-    "severity": "Moderate",
-    "description": "A fever caused by a viral infection that affects the body's immune response.",
-
-    "symptoms": [
-      {"name": "fever", "weight": 5},
-      {"name": "body pain", "weight": 4},
-      {"name": "fatigue", "weight": 4},
-      {"name": "headache", "weight": 3},
-      {"name": "weakness", "weight": 3},
-      {"name": "chills", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "temperature",
-      "viral infection"
-    ],
-
-    "negativeSymptoms": [
-      "light sensitivity",
-      "localized severe pain"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have fever?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have body pain?",
-        "yesScore": 4,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M008"],
-
-    "doctorAdvice": "Rest, hydration and monitoring symptoms are recommended."
-  },
-
-
-  {
-    "id": "D009",
-    "name": "Typhoid",
-    "category": "Infection",
-    "severity": "Moderate",
-    "description": "A bacterial infection caused by Salmonella bacteria, usually spread through contaminated food and water.",
-
-    "symptoms": [
-      {"name": "high fever", "weight": 5},
-      {"name": "abdominal pain", "weight": 4},
-      {"name": "headache", "weight": 3},
-      {"name": "weakness", "weight": 4},
-      {"name": "loss of appetite", "weight": 3},
-      {"name": "constipation", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "prolonged fever",
-      "stomach infection"
-    ],
-
-    "negativeSymptoms": [
-      "light sensitivity",
-      "sudden short attacks"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Has fever continued for several days?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have abdominal discomfort?",
-        "yesScore": 4,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M009"],
-
-    "doctorAdvice": "Medical diagnosis and appropriate antibiotics may be required."
-  },
-
-
-  {
-    "id": "D010",
-    "name": "Dengue Fever",
-    "category": "Infection",
-    "severity": "High",
-    "description": "A mosquito-borne viral infection that can cause high fever and severe body pain.",
-
-    "symptoms": [
-      {"name": "high fever", "weight": 5},
-      {"name": "severe body pain", "weight": 5},
-      {"name": "joint pain", "weight": 4},
-      {"name": "skin rash", "weight": 4},
-      {"name": "headache", "weight": 2},
-      {"name": "nausea", "weight": 2},
-      {"name": "vomiting", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "mosquito fever",
-      "breakbone fever"
-    ],
-
-    "negativeSymptoms": [
-      "light sensitivity",
-      "sound sensitivity"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have very high fever?",
-        "yesScore": 6,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have severe body or joint pain?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have skin rash?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M010"],
-
-    "doctorAdvice": "Medical evaluation is important, especially if fever is high or warning signs appear."
-  }
-]
-[
-  {
-    "id": "D011",
-    "name": "Malaria",
-    "category": "Infection",
-    "severity": "Moderate",
-    "description": "A mosquito-borne parasitic infection causing fever episodes, chills and weakness.",
-
-    "symptoms": [
-      {"name": "fever with chills", "weight": 5},
-      {"name": "sweating", "weight": 4},
-      {"name": "headache", "weight": 3},
-      {"name": "fatigue", "weight": 3},
-      {"name": "body pain", "weight": 3},
-      {"name": "vomiting", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "mosquito infection",
-      "repeated fever"
-    ],
-
-    "negativeSymptoms": [
-      "light sensitivity",
-      "skin blisters",
-      "runny nose"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you experience fever with chills?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Does fever come in repeated episodes?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M011"],
-
-    "doctorAdvice": "Medical testing is recommended because malaria requires proper diagnosis and treatment."
-  },
-
-
-  {
-    "id": "D012",
-    "name": "Chickenpox",
-    "category": "Infection",
-    "severity": "Moderate",
-    "description": "A viral infection causing an itchy skin rash with fluid-filled blisters.",
-
-    "symptoms": [
-      {"name": "itchy rash", "weight": 5},
-      {"name": "skin blisters", "weight": 5},
-      {"name": "fever", "weight": 3},
-      {"name": "fatigue", "weight": 2},
-      {"name": "loss of appetite", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "chickenpox rash",
-      "viral rash"
-    ],
-
-    "negativeSymptoms": [
-      "severe headache",
-      "light sensitivity",
-      "diarrhea"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have itchy fluid-filled blisters?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Did the rash appear gradually?",
-        "yesScore": 4,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M012"],
-
-    "doctorAdvice": "Avoid scratching and consult a doctor if symptoms become severe."
-  },
-
-
-  {
-    "id": "D013",
-    "name": "Measles",
-    "category": "Infection",
-    "severity": "Moderate",
-    "description": "A viral infection causing fever, cough, and characteristic skin rash.",
-
-    "symptoms": [
-      {"name": "high fever", "weight": 5},
-      {"name": "skin rash", "weight": 5},
-      {"name": "dry cough", "weight": 3},
-      {"name": "runny nose", "weight": 3},
-      {"name": "red eyes", "weight": 4}
-    ],
-
-    "commonSymptoms": [
-      "viral rash",
-      "childhood infection"
-    ],
-
-    "negativeSymptoms": [
-      "joint pain",
-      "vomiting only",
-      "light sensitivity"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have red or watery eyes?",
-        "yesScore": 6,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have fever with rash?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M013"],
-
-    "doctorAdvice": "Medical evaluation is recommended, especially in children or severe cases."
-  },
-
-
-  {
-    "id": "D014",
-    "name": "Mumps",
-    "category": "Infection",
-    "severity": "Moderate",
-    "description": "A viral infection affecting salivary glands, causing swelling near the jaw.",
-
-    "symptoms": [
-      {"name": "swollen cheeks", "weight": 5},
-      {"name": "jaw pain", "weight": 5},
-      {"name": "fever", "weight": 3},
-      {"name": "headache", "weight": 2},
-      {"name": "fatigue", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "face swelling",
-      "salivary gland infection"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "diarrhea",
-      "runny nose"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Is there swelling near your jaw or cheeks?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Does chewing cause pain?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M014"],
-
-    "doctorAdvice": "Consult a healthcare professional for proper diagnosis."
-  },
-
-
-  {
-    "id": "D015",
-    "name": "Conjunctivitis",
-    "category": "Eye Infection",
-    "severity": "Low",
-    "description": "An inflammation or infection of the eye's outer membrane.",
-
-    "symptoms": [
-      {"name": "red eyes", "weight": 5},
-      {"name": "eye discharge", "weight": 5},
-      {"name": "itchy eyes", "weight": 4},
-      {"name": "watery eyes", "weight": 3},
-      {"name": "eye irritation", "weight": 4}
-    ],
-
-    "commonSymptoms": [
-      "pink eye",
-      "eye infection"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "body pain",
-      "joint pain"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Are your eyes red and irritated?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Is there discharge from the eye?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M015"],
-
-    "doctorAdvice": "Avoid touching eyes and seek medical advice if symptoms worsen."
-  }
-]
-[
-  {
-    "id": "D016",
-    "name": "Sinusitis",
-    "category": "Respiratory",
-    "severity": "Moderate",
-    "description": "Inflammation of the sinus cavities causing facial pressure, congestion and nasal symptoms.",
-
-    "symptoms": [
-      {"name": "nasal congestion", "weight": 5},
-      {"name": "facial pain", "weight": 5},
-      {"name": "thick nasal mucus", "weight": 4},
-      {"name": "headache", "weight": 3},
-      {"name": "runny nose", "weight": 3},
-      {"name": "fever", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "blocked sinus",
-      "face pressure",
-      "stuffy nose"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "joint pain",
-      "light sensitivity"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you feel pressure or pain around your face?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Is your nose blocked with thick mucus?",
-        "yesScore": 6,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M016"],
-
-    "doctorAdvice": "Consult a doctor if symptoms persist or become severe."
-  },
-
-
-  {
-    "id": "D017",
-    "name": "Pharyngitis",
-    "category": "Respiratory",
-    "severity": "Low",
-    "description": "Inflammation of the throat commonly causing sore throat and difficulty swallowing.",
-
-    "symptoms": [
-      {"name": "sore throat", "weight": 5},
-      {"name": "pain while swallowing", "weight": 5},
-      {"name": "fever", "weight": 3},
-      {"name": "swollen glands", "weight": 3},
-      {"name": "throat irritation", "weight": 4}
-    ],
-
-    "commonSymptoms": [
-      "throat infection",
-      "throat pain"
-    ],
-
-    "negativeSymptoms": [
-      "severe breathing difficulty",
-      "chest pain",
-      "skin rash"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Does swallowing cause throat pain?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Is throat irritation your main symptom?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M017"],
-
-    "doctorAdvice": "Stay hydrated and seek medical advice if symptoms become severe."
-  },
-
-
-  {
-    "id": "D018",
-    "name": "Tonsillitis",
-    "category": "Respiratory",
-    "severity": "Moderate",
-    "description": "Inflammation of tonsils causing throat pain, swelling and fever.",
-
-    "symptoms": [
-      {"name": "swollen tonsils", "weight": 5},
-      {"name": "severe sore throat", "weight": 5},
-      {"name": "pain while swallowing", "weight": 4},
-      {"name": "fever", "weight": 3},
-      {"name": "bad breath", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "tonsil infection",
-      "throat swelling"
-    ],
-
-    "negativeSymptoms": [
-      "diarrhea",
-      "skin blisters",
-      "eye discharge"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Are your tonsils swollen?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have difficulty swallowing?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M018"],
-
-    "doctorAdvice": "Medical examination may be required for severe throat infections."
-  },
-
-
-  {
-    "id": "D019",
-    "name": "Bronchitis",
-    "category": "Respiratory",
-    "severity": "Moderate",
-    "description": "Inflammation of bronchial tubes causing persistent cough and breathing discomfort.",
-
-    "symptoms": [
-      {"name": "persistent cough", "weight": 5},
-      {"name": "mucus production", "weight": 4},
-      {"name": "chest discomfort", "weight": 4},
-      {"name": "fatigue", "weight": 3},
-      {"name": "mild fever", "weight": 2},
-      {"name": "wheezing", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "chest cough",
-      "bronchial infection"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "eye redness",
-      "severe stomach pain"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have you had a cough for several days?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Are you coughing mucus?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M019"],
-
-    "doctorAdvice": "Consult a healthcare professional if breathing problems increase."
-  },
-
-
-  {
-    "id": "D020",
-    "name": "Pneumonia",
-    "category": "Respiratory",
-    "severity": "High",
-    "description": "A serious lung infection affecting air sacs and causing breathing difficulty.",
-
-    "symptoms": [
-      {"name": "high fever", "weight": 5},
-      {"name": "shortness of breath", "weight": 5},
-      {"name": "chest pain", "weight": 5},
-      {"name": "cough", "weight": 4},
-      {"name": "fatigue", "weight": 3},
-      {"name": "chills", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "lung infection",
-      "breathing infection"
-    ],
-
-    "negativeSymptoms": [
-      "only runny nose",
-      "only throat irritation"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you experience difficulty breathing?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Does breathing cause chest pain?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M020"],
-
-    "doctorAdvice": "Medical evaluation is important because pneumonia can become serious."
-  }
-]
-[
-  {
-    "id": "D021",
-    "name": "Asthma",
-    "category": "Respiratory",
-    "severity": "Moderate",
-    "description": "A chronic respiratory condition causing narrowing of airways and difficulty breathing.",
-
-    "symptoms": [
-      {"name": "wheezing", "weight": 5},
-      {"name": "shortness of breath", "weight": 5},
-      {"name": "chest tightness", "weight": 5},
-      {"name": "cough", "weight": 3},
-      {"name": "breathing difficulty", "weight": 5}
-    ],
-
-    "commonSymptoms": [
-      "breathing problem",
-      "asthma attack"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "high fever",
-      "vomiting"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you experience wheezing while breathing?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Does cold air or exercise trigger breathing difficulty?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M021"],
-
-    "doctorAdvice": "Asthma symptoms should be monitored and managed with proper medical guidance."
-  },
-
-
-  {
-    "id": "D022",
-    "name": "Tuberculosis",
-    "category": "Respiratory Infection",
-    "severity": "High",
-    "description": "A bacterial infection mainly affecting the lungs and causing long-term respiratory symptoms.",
-
-    "symptoms": [
-      {"name": "persistent cough", "weight": 5},
-      {"name": "weight loss", "weight": 5},
-      {"name": "night sweats", "weight": 5},
-      {"name": "long duration fever", "weight": 4},
-      {"name": "fatigue", "weight": 3},
-      {"name": "chest pain", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "long cough",
-      "lung infection"
-    ],
-
-    "negativeSymptoms": [
-      "sudden sneezing",
-      "short-term cold symptoms"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Has your cough continued for many weeks?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Do you experience night sweats or unexplained weight loss?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M022"],
-
-    "doctorAdvice": "Medical testing and professional treatment are required."
-  },
-
-
-  {
-    "id": "D023",
-    "name": "Allergic Rhinitis",
-    "category": "Allergy",
-    "severity": "Low",
-    "description": "An allergic reaction affecting the nose, commonly triggered by dust, pollen or allergens.",
-
-    "symptoms": [
-      {"name": "sneezing", "weight": 5},
-      {"name": "runny nose", "weight": 5},
-      {"name": "itchy nose", "weight": 5},
-      {"name": "watery eyes", "weight": 4},
-      {"name": "nasal congestion", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "dust allergy",
-      "seasonal allergy"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "body pain",
-      "skin blisters"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do symptoms worsen around dust or pollen?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have frequent sneezing attacks?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M023"],
-
-    "doctorAdvice": "Avoid known allergens and seek medical advice for persistent symptoms."
-  },
-
-
-  {
-    "id": "D024",
-    "name": "Skin Allergy",
-    "category": "Allergy",
-    "severity": "Low",
-    "description": "An allergic reaction of the skin causing irritation, itching and redness.",
-
-    "symptoms": [
-      {"name": "itching", "weight": 5},
-      {"name": "skin redness", "weight": 5},
-      {"name": "skin rash", "weight": 4},
-      {"name": "swelling", "weight": 3},
-      {"name": "irritation", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "allergic rash",
-      "skin irritation"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "persistent cough",
-      "breathing difficulty"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Did itching start after contact with something new?",
-        "yesScore": 6,
-        "noScore": 0
-      },
-      {
-        "question": "Is the affected area red or swollen?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M024"],
-
-    "doctorAdvice": "Avoid possible allergens and consult a doctor if symptoms worsen."
-  },
-
-
-  {
-    "id": "D025",
-    "name": "Eczema",
-    "category": "Skin Condition",
-    "severity": "Moderate",
-    "description": "A chronic skin condition causing dry, itchy and inflamed skin.",
-
-    "symptoms": [
-      {"name": "dry skin", "weight": 5},
-      {"name": "itching", "weight": 5},
-      {"name": "skin rash", "weight": 4},
-      {"name": "cracked skin", "weight": 4},
-      {"name": "skin inflammation", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "dry itchy skin",
-      "chronic rash"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "vomiting",
-      "breathing difficulty"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Is your skin dry and repeatedly itchy?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Does the rash return repeatedly?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M025"],
-
-    "doctorAdvice": "Skin care and medical guidance may help control symptoms."
-  }
-]
-[
-  {
-    "id": "D026",
-    "name": "Psoriasis",
-    "category": "Skin Condition",
-    "severity": "Moderate",
-    "description": "A chronic autoimmune skin condition causing rapid skin cell buildup and thick scaly patches.",
-
-    "symptoms": [
-      {"name": "thick skin patches", "weight": 5},
-      {"name": "scaly skin", "weight": 5},
-      {"name": "skin redness", "weight": 4},
-      {"name": "itching", "weight": 3},
-      {"name": "dry skin", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "scaling skin",
-      "chronic skin patches"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "vomiting",
-      "breathing difficulty"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have thick, scaly patches on your skin?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Do the skin patches return repeatedly?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M026"],
-
-    "doctorAdvice": "Psoriasis requires proper skin care and medical guidance for long-term control."
-  },
-
-
-  {
-    "id": "D027",
-    "name": "Acne",
-    "category": "Skin Condition",
-    "severity": "Low",
-    "description": "A common skin condition caused by blocked pores and increased oil production.",
-
-    "symptoms": [
-      {"name": "pimples", "weight": 5},
-      {"name": "blackheads", "weight": 5},
-      {"name": "whiteheads", "weight": 5},
-      {"name": "oily skin", "weight": 4},
-      {"name": "skin inflammation", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "breakouts",
-      "facial pimples"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "joint pain",
-      "vomiting"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Are there pimples or blackheads on your skin?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Is the affected area oily?",
-        "yesScore": 4,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M027"],
-
-    "doctorAdvice": "Maintain proper skin hygiene and seek medical advice for severe acne."
-  },
-
-
-  {
-    "id": "D028",
-    "name": "Urinary Tract Infection",
-    "category": "Urinary System",
-    "severity": "Moderate",
-    "description": "An infection affecting parts of the urinary system, commonly the bladder.",
-
-    "symptoms": [
-      {"name": "burning urination", "weight": 5},
-      {"name": "frequent urination", "weight": 5},
-      {"name": "lower abdominal pain", "weight": 4},
-      {"name": "cloudy urine", "weight": 4},
-      {"name": "fever", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "urine infection",
-      "bladder infection"
-    ],
-
-    "negativeSymptoms": [
-      "light sensitivity",
-      "skin rash",
-      "cough"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Does urination cause burning or pain?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Are you urinating more frequently than usual?",
-        "yesScore": 6,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M028"],
-
-    "doctorAdvice": "Medical evaluation may be required, especially if fever or pain increases."
-  },
-
-
-  {
-    "id": "D029",
-    "name": "Kidney Stone",
-    "category": "Urinary System",
-    "severity": "High",
-    "description": "A condition where hard mineral deposits form inside the kidney or urinary tract.",
-
-    "symptoms": [
-      {"name": "severe flank pain", "weight": 5},
-      {"name": "blood in urine", "weight": 5},
-      {"name": "nausea", "weight": 3},
-      {"name": "vomiting", "weight": 3},
-      {"name": "painful urination", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "kidney pain",
-      "urinary stone"
-    ],
-
-    "negativeSymptoms": [
-      "runny nose",
-      "skin rash",
-      "sore throat"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Is the pain severe and located near your side/back?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Have you noticed blood in urine?",
-        "yesScore": 8,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M029"],
-
-    "doctorAdvice": "Severe pain or urinary problems require medical evaluation."
-  },
-
-
-  {
-    "id": "D030",
-    "name": "Appendicitis",
-    "category": "Digestive System",
-    "severity": "High",
-    "description": "Inflammation of the appendix causing abdominal pain and digestive symptoms.",
-
-    "symptoms": [
-      {"name": "right lower abdominal pain", "weight": 5},
-      {"name": "loss of appetite", "weight": 4},
-      {"name": "fever", "weight": 3},
-      {"name": "vomiting", "weight": 3},
-      {"name": "nausea", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "appendix infection",
-      "abdominal emergency"
-    ],
-
-    "negativeSymptoms": [
-      "runny nose",
-      "skin rash",
-      "eye irritation"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Is the pain mainly on the lower right side of your abdomen?",
-        "yesScore": 9,
-        "noScore": 0
-      },
-      {
-        "question": "Did the pain increase over time?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M030"],
-
-    "doctorAdvice": "Appendicitis can require urgent medical attention."
-  }
-]
-[
-  {
-    "id": "D031",
-    "name": "Peptic Ulcer",
-    "category": "Digestive System",
-    "severity": "Moderate",
-    "description": "A sore that develops in the lining of the stomach or small intestine.",
-
-    "symptoms": [
-      {"name": "upper abdominal pain", "weight": 5},
-      {"name": "burning stomach pain", "weight": 5},
-      {"name": "nausea", "weight": 3},
-      {"name": "bloating", "weight": 3},
-      {"name": "loss of appetite", "weight": 3},
-      {"name": "vomiting", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "stomach ulcer",
-      "gastric pain"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "cough",
-      "eye irritation"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Is there a burning pain in your upper abdomen?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Does pain occur when your stomach is empty?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M031"],
-
-    "doctorAdvice": "Persistent stomach pain should be evaluated by a healthcare professional."
-  },
-
-
-  {
-    "id": "D032",
-    "name": "GERD (Acid Reflux)",
-    "category": "Digestive System",
-    "severity": "Low",
-    "description": "A condition where stomach acid flows back into the food pipe causing irritation.",
-
-    "symptoms": [
-      {"name": "heartburn", "weight": 5},
-      {"name": "acid reflux", "weight": 5},
-      {"name": "chest burning", "weight": 4},
-      {"name": "sour taste in mouth", "weight": 4},
-      {"name": "burping", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "acidity",
-      "gastric reflux"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "skin rash",
-      "joint pain"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you feel burning sensation rising from your stomach to chest?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Does it worsen after meals?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M032"],
-
-    "doctorAdvice": "Lifestyle changes and medical guidance can help manage symptoms."
-  },
-
-
-  {
-    "id": "D033",
-    "name": "Constipation",
-    "category": "Digestive System",
-    "severity": "Low",
-    "description": "A digestive condition causing difficulty or reduced frequency of bowel movements.",
-
-    "symptoms": [
-      {"name": "hard stools", "weight": 5},
-      {"name": "difficulty passing stool", "weight": 5},
-      {"name": "infrequent bowel movement", "weight": 5},
-      {"name": "abdominal discomfort", "weight": 3},
-      {"name": "bloating", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "irregular bowel movement",
-      "blocked stomach"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "cough",
-      "skin infection"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have you had difficulty passing stool?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Are stools harder than usual?",
-        "yesScore": 6,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M033"],
-
-    "doctorAdvice": "Increase hydration and consult a doctor if symptoms persist."
-  },
-
-
-  {
-    "id": "D034",
-    "name": "Irritable Bowel Syndrome (IBS)",
-    "category": "Digestive System",
-    "severity": "Moderate",
-    "description": "A chronic digestive disorder affecting bowel habits and causing abdominal discomfort.",
-
-    "symptoms": [
-      {"name": "abdominal cramps", "weight": 5},
-      {"name": "bloating", "weight": 4},
-      {"name": "diarrhea", "weight": 3},
-      {"name": "constipation", "weight": 3},
-      {"name": "change in bowel habits", "weight": 5}
-    ],
-
-    "commonSymptoms": [
-      "sensitive stomach",
-      "bowel disorder"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "blood in stool",
-      "skin rash"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do symptoms repeatedly come and go?",
-        "yesScore": 6,
-        "noScore": 0
-      },
-      {
-        "question": "Do you experience alternating constipation and diarrhea?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M034"],
-
-    "doctorAdvice": "Diet management and medical consultation may help control symptoms."
-  },
-
-
-  {
-    "id": "D035",
-    "name": "Diabetes Mellitus",
-    "category": "Metabolic Disorder",
-    "severity": "High",
-    "description": "A chronic condition where blood glucose levels remain elevated due to insulin problems.",
-
-    "symptoms": [
-      {"name": "frequent urination", "weight": 5},
-      {"name": "excessive thirst", "weight": 5},
-      {"name": "increased hunger", "weight": 4},
-      {"name": "fatigue", "weight": 3},
-      {"name": "unexplained weight loss", "weight": 4},
-      {"name": "slow wound healing", "weight": 4}
-    ],
-
-    "commonSymptoms": [
-      "high sugar",
-      "blood glucose problem"
-    ],
-
-    "negativeSymptoms": [
-      "sudden rash",
-      "runny nose",
-      "sore throat"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Are you unusually thirsty frequently?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Do you urinate more often than normal?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M035"],
-
-    "doctorAdvice": "Blood sugar testing and medical supervision are important."
-  }
-]
-[
-  {
-    "id": "D036",
-    "name": "Hypertension (High Blood Pressure)",
-    "category": "Cardiovascular",
-    "severity": "Moderate",
-    "description": "A condition where blood pressure remains higher than normal over time.",
-
-    "symptoms": [
-      {"name": "headache", "weight": 3},
-      {"name": "dizziness", "weight": 3},
-      {"name": "fatigue", "weight": 2},
-      {"name": "blurred vision", "weight": 4},
-      {"name": "chest discomfort", "weight": 4}
-    ],
-
-    "commonSymptoms": [
-      "high BP",
-      "blood pressure problem"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "runny nose",
-      "itching"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have you been diagnosed with high blood pressure before?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Do you experience dizziness or blurred vision?",
-        "yesScore": 4,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M036"],
-
-    "doctorAdvice": "Regular monitoring and medical guidance are important."
-  },
-
-
-  {
-    "id": "D037",
-    "name": "Thyroid Disorder (Hypothyroidism)",
-    "category": "Endocrine",
-    "severity": "Moderate",
-    "description": "A condition where the thyroid gland produces insufficient thyroid hormones.",
-
-    "symptoms": [
-      {"name": "fatigue", "weight": 5},
-      {"name": "weight gain", "weight": 4},
-      {"name": "cold sensitivity", "weight": 4},
-      {"name": "dry skin", "weight": 3},
-      {"name": "slow heartbeat", "weight": 3},
-      {"name": "hair loss", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "low thyroid",
-      "hormone imbalance"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "cough",
-      "vomiting"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have you gained weight without major lifestyle changes?",
-        "yesScore": 5,
-        "noScore": 0
-      },
-      {
-        "question": "Do you often feel unusually tired?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M037"],
-
-    "doctorAdvice": "Blood tests and medical evaluation are needed for diagnosis."
-  },
-
-
-  {
-    "id": "D038",
-    "name": "Anemia",
-    "category": "Blood Disorder",
-    "severity": "Moderate",
-    "description": "A condition where the body has reduced healthy red blood cells or hemoglobin.",
-
-    "symptoms": [
-      {"name": "fatigue", "weight": 5},
-      {"name": "weakness", "weight": 4},
-      {"name": "dizziness", "weight": 4},
-      {"name": "pale skin", "weight": 5},
-      {"name": "shortness of breath", "weight": 3},
-      {"name": "rapid heartbeat", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "low hemoglobin",
-      "iron deficiency"
-    ],
-
-    "negativeSymptoms": [
-      "skin blisters",
-      "runny nose",
-      "eye discharge"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you often feel tired even after resting?",
-        "yesScore": 5,
-        "noScore": 0
-      },
-      {
-        "question": "Have you been told your hemoglobin is low?",
-        "yesScore": 8,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M038"],
-
-    "doctorAdvice": "Blood tests are required to confirm anemia."
-  },
-
-
-  {
-    "id": "D039",
-    "name": "Vitamin D Deficiency",
-    "category": "Nutritional Disorder",
-    "severity": "Low",
-    "description": "A condition caused by insufficient vitamin D levels affecting bones and muscles.",
-
-    "symptoms": [
-      {"name": "bone pain", "weight": 5},
-      {"name": "muscle weakness", "weight": 4},
-      {"name": "fatigue", "weight": 4},
-      {"name": "low mood", "weight": 2},
-      {"name": "frequent illness", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "vitamin deficiency",
-      "weak bones"
-    ],
-
-    "negativeSymptoms": [
-      "high fever",
-      "severe cough",
-      "skin infection"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have bone or muscle pain?",
-        "yesScore": 6,
-        "noScore": 0
-      },
-      {
-        "question": "Do you spend very little time in sunlight?",
-        "yesScore": 4,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M039"],
-
-    "doctorAdvice": "Vitamin levels should be checked before supplementation."
-  },
-
-
-  {
-    "id": "D040",
-    "name": "Cluster Headache",
-    "category": "Neurological",
-    "severity": "Moderate",
-    "description": "A neurological headache disorder causing repeated severe attacks, often around one eye.",
-
-    "symptoms": [
-      {"name": "severe one-sided headache", "weight": 5},
-      {"name": "pain around eye", "weight": 5},
-      {"name": "watery eye", "weight": 4},
-      {"name": "nasal congestion", "weight": 3},
-      {"name": "restlessness", "weight": 4}
-    ],
-
-    "commonSymptoms": [
-      "eye headache",
-      "head attack"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "diarrhea",
-      "high fever"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Is the headache mainly around one eye?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Does the headache occur in repeated attacks?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M040"],
-
-    "doctorAdvice": "Severe recurring headaches should be evaluated by a healthcare professional."
-  }
-]
-[
-  {
-    "id": "D041",
-    "name": "Heart Attack (Myocardial Infarction)",
-    "category": "Cardiovascular",
-    "severity": "High",
-    "description": "A medical emergency caused by reduced blood flow to the heart muscle.",
-
-    "symptoms": [
-      {"name": "chest pain", "weight": 5},
-      {"name": "pressure in chest", "weight": 5},
-      {"name": "pain spreading to arm", "weight": 5},
-      {"name": "shortness of breath", "weight": 4},
-      {"name": "sweating", "weight": 4},
-      {"name": "nausea", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "heart emergency",
-      "cardiac pain"
-    ],
-
-    "negativeSymptoms": [
-      "runny nose",
-      "itching",
-      "skin rash"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Is there severe pressure or pain in your chest?",
-        "yesScore": 10,
-        "noScore": 0
-      },
-      {
-        "question": "Does pain spread to your arm, neck or jaw?",
-        "yesScore": 10,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M041"],
-
-    "doctorAdvice": "Seek emergency medical help immediately if warning signs appear."
-  },
-
-
-  {
-    "id": "D042",
-    "name": "Stroke",
-    "category": "Neurological Emergency",
-    "severity": "High",
-    "description": "A condition where blood supply to part of the brain is interrupted.",
-
-    "symptoms": [
-      {"name": "facial weakness", "weight": 5},
-      {"name": "arm weakness", "weight": 5},
-      {"name": "speech difficulty", "weight": 5},
-      {"name": "sudden confusion", "weight": 5},
-      {"name": "severe headache", "weight": 3},
-      {"name": "dizziness", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "brain attack",
-      "neurological emergency"
-    ],
-
-    "negativeSymptoms": [
-      "runny nose",
-      "mild cough",
-      "skin itching"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Did weakness or speech problems start suddenly?",
-        "yesScore": 10,
-        "noScore": 0
-      },
-      {
-        "question": "Is one side of the body weak?",
-        "yesScore": 10,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M042"],
-
-    "doctorAdvice": "Stroke symptoms require immediate emergency medical attention."
-  },
-
-
-  {
-    "id": "D043",
-    "name": "Epilepsy",
-    "category": "Neurological",
-    "severity": "Moderate",
-    "description": "A neurological disorder causing repeated seizures due to abnormal brain activity.",
-
-    "symptoms": [
-      {"name": "seizures", "weight": 5},
-      {"name": "loss of awareness", "weight": 5},
-      {"name": "uncontrolled movements", "weight": 5},
-      {"name": "confusion after episode", "weight": 4},
-      {"name": "temporary memory loss", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "fits",
-      "seizure disorder"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "sore throat",
-      "runny nose"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have you experienced seizures or fits?",
-        "yesScore": 10,
-        "noScore": 0
-      },
-      {
-        "question": "Do you lose awareness during episodes?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M043"],
-
-    "doctorAdvice": "Neurological evaluation is recommended for repeated episodes."
-  },
-
-
-  {
-    "id": "D044",
-    "name": "Kidney Infection",
-    "category": "Urinary System",
-    "severity": "High",
-    "description": "A bacterial infection affecting the kidneys, often developing from urinary infections.",
-
-    "symptoms": [
-      {"name": "fever", "weight": 4},
-      {"name": "back or side pain", "weight": 5},
-      {"name": "burning urination", "weight": 4},
-      {"name": "frequent urination", "weight": 4},
-      {"name": "nausea", "weight": 3},
-      {"name": "chills", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "kidney infection",
-      "urinary infection"
-    ],
-
-    "negativeSymptoms": [
-      "cough",
-      "skin rash",
-      "eye irritation"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you have pain in your back or side?",
-        "yesScore": 7,
-        "noScore": 0
-      },
-      {
-        "question": "Do you have fever along with urinary symptoms?",
-        "yesScore": 6,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M044"],
-
-    "doctorAdvice": "Medical treatment is important to prevent complications."
-  },
-
-
-  {
-    "id": "D045",
-    "name": "Gallstones",
-    "category": "Digestive System",
-    "severity": "Moderate",
-    "description": "Hard deposits formed in the gallbladder that may cause abdominal pain.",
-
-    "symptoms": [
-      {"name": "upper right abdominal pain", "weight": 5},
-      {"name": "pain after fatty meals", "weight": 5},
-      {"name": "nausea", "weight": 3},
-      {"name": "vomiting", "weight": 3},
-      {"name": "indigestion", "weight": 3}
-    ],
-
-    "commonSymptoms": [
-      "gallbladder problem",
-      "biliary pain"
-    ],
-
-    "negativeSymptoms": [
-      "cough",
-      "skin rash",
-      "light sensitivity"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Does pain occur after eating oily or fatty food?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Is pain located on the upper right side of abdomen?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M045"],
-
-    "doctorAdvice": "Consult a doctor if pain is severe or repeated."
-  }
-]
-[
-  {
-    "id": "D046",
-    "name": "Hepatitis",
-    "category": "Liver Disorder",
-    "severity": "Moderate",
-    "description": "Inflammation of the liver commonly caused by viral infections or other factors affecting liver function.",
-
-    "symptoms": [
-      {"name": "fatigue", "weight": 4},
-      {"name": "yellow skin or eyes", "weight": 5},
-      {"name": "abdominal discomfort", "weight": 3},
-      {"name": "loss of appetite", "weight": 4},
-      {"name": "nausea", "weight": 3},
-      {"name": "dark urine", "weight": 5}
-    ],
-
-    "commonSymptoms": [
-      "liver infection",
-      "jaundice"
-    ],
-
-    "negativeSymptoms": [
-      "runny nose",
-      "sore throat",
-      "skin itching only"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have your eyes or skin become yellow?",
-        "yesScore": 10,
-        "noScore": 0
-      },
-      {
-        "question": "Have you noticed dark urine?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M046"],
-
-    "doctorAdvice": "Liver-related symptoms require medical evaluation and appropriate testing."
-  },
-
-
-  {
-    "id": "D047",
-    "name": "Arthritis",
-    "category": "Musculoskeletal",
-    "severity": "Moderate",
-    "description": "A condition causing inflammation and pain in joints.",
-
-    "symptoms": [
-      {"name": "joint pain", "weight": 5},
-      {"name": "joint swelling", "weight": 5},
-      {"name": "joint stiffness", "weight": 4},
-      {"name": "reduced movement", "weight": 4},
-      {"name": "fatigue", "weight": 2}
-    ],
-
-    "commonSymptoms": [
-      "joint problem",
-      "inflammation of joints"
-    ],
-
-    "negativeSymptoms": [
-      "cough",
-      "runny nose",
-      "vomiting"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Are your joints swollen or painful?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Is stiffness worse after waking up?",
-        "yesScore": 5,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M047"],
-
-    "doctorAdvice": "Persistent joint problems should be evaluated by a healthcare professional."
-  },
-
-
-  {
-    "id": "D048",
-    "name": "Osteoporosis",
-    "category": "Bone Disorder",
-    "severity": "Moderate",
-    "description": "A condition where bones become weaker and more prone to fractures.",
-
-    "symptoms": [
-      {"name": "bone pain", "weight": 4},
-      {"name": "back pain", "weight": 4},
-      {"name": "frequent fractures", "weight": 5},
-      {"name": "loss of height", "weight": 4},
-      {"name": "weak bones", "weight": 5}
-    ],
-
-    "commonSymptoms": [
-      "bone weakness",
-      "low bone density"
-    ],
-
-    "negativeSymptoms": [
-      "fever",
-      "cough",
-      "skin rash"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have you experienced repeated bone fractures?",
-        "yesScore": 10,
-        "noScore": 0
-      },
-      {
-        "question": "Have you been diagnosed with low bone density?",
-        "yesScore": 8,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M048"],
-
-    "doctorAdvice": "Bone health assessment and medical advice are recommended."
-  },
-
-
-  {
-    "id": "D049",
-    "name": "Depression",
-    "category": "Mental Health",
-    "severity": "Moderate",
-    "description": "A mental health condition affecting mood, thoughts and daily activities.",
-
-    "symptoms": [
-      {"name": "persistent sadness", "weight": 5},
-      {"name": "loss of interest", "weight": 5},
-      {"name": "low energy", "weight": 4},
-      {"name": "sleep changes", "weight": 3},
-      {"name": "difficulty concentrating", "weight": 4},
-      {"name": "feelings of hopelessness", "weight": 5}
-    ],
-
-    "commonSymptoms": [
-      "low mood",
-      "mental stress"
-    ],
-
-    "negativeSymptoms": [
-      "skin rash",
-      "high fever",
-      "joint swelling"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Have you felt persistently sad for a long time?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Have you lost interest in activities you usually enjoy?",
-        "yesScore": 8,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M049"],
-
-    "doctorAdvice": "Mental health concerns should be discussed with a qualified professional."
-  },
-
-
-  {
-    "id": "D050",
-    "name": "Anxiety Disorder",
-    "category": "Mental Health",
-    "severity": "Moderate",
-    "description": "A condition involving excessive worry, fear and physical stress responses.",
-
-    "symptoms": [
-      {"name": "excessive worry", "weight": 5},
-      {"name": "restlessness", "weight": 4},
-      {"name": "rapid heartbeat", "weight": 4},
-      {"name": "difficulty sleeping", "weight": 4},
-      {"name": "difficulty concentrating", "weight": 3},
-      {"name": "panic feelings", "weight": 5}
-    ],
-
-    "commonSymptoms": [
-      "stress disorder",
-      "panic symptoms"
-    ],
-
-    "negativeSymptoms": [
-      "skin infection",
-      "high fever",
-      "joint pain"
-    ],
-
-    "followUpQuestions": [
-      {
-        "question": "Do you experience excessive fear or worry frequently?",
-        "yesScore": 8,
-        "noScore": 0
-      },
-      {
-        "question": "Do you experience sudden panic feelings?",
-        "yesScore": 7,
-        "noScore": 0
-      }
-    ],
-
-    "relatedMedicines": ["M050"],
-
-    "doctorAdvice": "Mental health support and professional guidance can help manage symptoms."
-  }
+{
+"id":"D001",
+"name":"Common Cold",
+
+"severity":"Low",
+"category":"Infectious",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"runny nose","weight":10},
+{"name":"sneezing","weight":9},
+{"name":"nasal congestion","weight":8}
+],
+
+"secondarySymptoms":[
+{"name":"mild cough","weight":5},
+{"name":"sore throat","weight":5},
+{"name":"mild fever","weight":4},
+{"name":"fatigue","weight":3}
+],
+
+"negativeSymptoms":[
+"high fever",
+"light sensitivity",
+"joint pain",
+"severe headache"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you have a runny or blocked nose?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Have symptoms lasted less than 10 days?",
+"yesScore":4,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Rest, hydration and monitoring are usually sufficient."
+},
+
+{
+"id":"D002",
+"name":"Influenza",
+
+"severity":"Moderate",
+"category":"Infectious",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"high fever","weight":10},
+{"name":"body pain","weight":9},
+{"name":"fatigue","weight":8}
+],
+
+"secondarySymptoms":[
+{"name":"cough","weight":6},
+{"name":"headache","weight":6},
+{"name":"chills","weight":5},
+{"name":"sore throat","weight":4}
+],
+
+"negativeSymptoms":[
+"skin rash",
+"burning urination",
+"light sensitivity"
+],
+
+"followUpQuestions":[
+{
+"question":"Did symptoms begin suddenly?",
+"yesScore":6,
+"noScore":0
+},
+{
+"question":"Do you have severe body aches?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Seek medical advice if breathing becomes difficult."
+},
+
+{
+"id":"D003",
+"name":"COVID-19",
+
+"severity":"Moderate",
+"category":"Infectious",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"fever","weight":9},
+{"name":"dry cough","weight":9},
+{"name":"loss of smell","weight":10},
+{"name":"loss of taste","weight":10}
+],
+
+"secondarySymptoms":[
+{"name":"fatigue","weight":5},
+{"name":"sore throat","weight":5},
+{"name":"headache","weight":4},
+{"name":"shortness of breath","weight":7}
+],
+
+"negativeSymptoms":[
+"burning urination",
+"joint swelling",
+"skin blisters"
+],
+
+"followUpQuestions":[
+{
+"question":"Have you lost your sense of smell or taste?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Have you recently been exposed to someone sick?",
+"yesScore":4,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Follow local health guidance and seek care for breathing difficulty."
+},
+
+{
+"id":"D004",
+"name":"Dengue Fever",
+
+"severity":"High",
+"category":"Infectious",
+
+"redFlag":true,
+
+"coreSymptoms":[
+{"name":"high fever","weight":10},
+{"name":"joint pain","weight":10},
+{"name":"muscle pain","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"headache","weight":5},
+{"name":"pain behind eyes","weight":8},
+{"name":"skin rash","weight":7},
+{"name":"nausea","weight":3}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"sneezing",
+"burning urination"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you have pain behind the eyes?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Do you have severe joint and muscle pain?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Medical evaluation is recommended, especially if symptoms worsen."
+},
+
+{
+"id":"D005",
+"name":"Malaria",
+
+"severity":"High",
+"category":"Infectious",
+
+"redFlag":true,
+
+"coreSymptoms":[
+{"name":"high fever","weight":10},
+{"name":"chills","weight":10},
+{"name":"sweating","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"headache","weight":5},
+{"name":"fatigue","weight":5},
+{"name":"nausea","weight":4},
+{"name":"vomiting","weight":4}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"sneezing",
+"light sensitivity"
+],
+
+"followUpQuestions":[
+{
+"question":"Do fever and chills come in cycles?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Have you recently been in a mosquito-prone area?",
+"yesScore":5,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Prompt medical testing is recommended."
+},
+{
+"id":"D006",
+"name":"Acute Gastroenteritis",
+
+"severity":"Moderate",
+"category":"Digestive",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"diarrhea","weight":10},
+{"name":"vomiting","weight":9},
+{"name":"abdominal cramps","weight":8}
+],
+
+"secondarySymptoms":[
+{"name":"nausea","weight":6},
+{"name":"fever","weight":4},
+{"name":"fatigue","weight":4},
+{"name":"dehydration","weight":5}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"sneezing",
+"joint swelling"
+],
+
+"followUpQuestions":[
+{
+"question":"Have you had repeated diarrhea recently?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Have symptoms started within the last few days?",
+"yesScore":4,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Drink plenty of fluids and seek care if dehydration develops."
+},
+
+{
+"id":"D007",
+"name":"Food Poisoning",
+
+"severity":"Moderate",
+"category":"Digestive",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"vomiting","weight":10},
+{"name":"diarrhea","weight":10},
+{"name":"nausea","weight":8}
+],
+
+"secondarySymptoms":[
+{"name":"abdominal pain","weight":6},
+{"name":"fever","weight":4},
+{"name":"weakness","weight":3}
+],
+
+"negativeSymptoms":[
+"loss of smell",
+"runny nose",
+"sneezing"
+],
+
+"followUpQuestions":[
+{
+"question":"Did symptoms begin after eating suspicious food?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Did multiple people become sick after eating the same food?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Hydration is important. Seek medical care if symptoms are severe."
+},
+
+{
+"id":"D008",
+"name":"Asthma",
+
+"severity":"Moderate",
+"category":"Respiratory",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"wheezing","weight":10},
+{"name":"shortness of breath","weight":10},
+{"name":"chest tightness","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"cough","weight":5},
+{"name":"difficulty breathing during exercise","weight":6},
+{"name":"night cough","weight":5}
+],
+
+"negativeSymptoms":[
+"vomiting",
+"diarrhea",
+"skin rash"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you hear a whistling sound while breathing?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Do symptoms worsen with exercise or dust exposure?",
+"yesScore":6,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Breathing difficulty should not be ignored. Use prescribed treatment and seek medical help if symptoms worsen."
+},
+
+{
+"id":"D009",
+"name":"Bronchitis",
+
+"severity":"Moderate",
+"category":"Respiratory",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"persistent cough","weight":10},
+{"name":"mucus cough","weight":9},
+{"name":"chest discomfort","weight":7}
+],
+
+"secondarySymptoms":[
+{"name":"fatigue","weight":4},
+{"name":"mild fever","weight":4},
+{"name":"shortness of breath","weight":4},
+{"name":"sore throat","weight":3}
+],
+
+"negativeSymptoms":[
+"burning urination",
+"joint swelling",
+"light sensitivity"
+],
+
+"followUpQuestions":[
+{
+"question":"Have you been coughing for several days?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Are you coughing up mucus?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Persistent cough should be medically evaluated if it continues or worsens."
+},
+
+{
+"id":"D010",
+"name":"Pneumonia",
+
+"severity":"High",
+"category":"Respiratory",
+
+"redFlag":true,
+
+"coreSymptoms":[
+{"name":"high fever","weight":10},
+{"name":"shortness of breath","weight":10},
+{"name":"chest pain while breathing","weight":10}
+],
+
+"secondarySymptoms":[
+{"name":"cough","weight":6},
+{"name":"fatigue","weight":5},
+{"name":"chills","weight":5},
+{"name":"mucus cough","weight":5}
+],
+
+"negativeSymptoms":[
+"runny nose only",
+"sneezing only",
+"itching"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you have difficulty breathing?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Does your chest hurt when breathing deeply?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Pneumonia can become serious. Medical evaluation is strongly recommended."
+},
+{
+"id":"D011",
+"name":"Sinusitis",
+
+"severity":"Low",
+"category":"Respiratory",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"facial pain","weight":10},
+{"name":"nasal congestion","weight":9},
+{"name":"facial pressure","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"headache","weight":5},
+{"name":"runny nose","weight":5},
+{"name":"reduced smell","weight":4},
+{"name":"fatigue","weight":3}
+],
+
+"negativeSymptoms":[
+"vomiting",
+"diarrhea",
+"burning urination"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you feel pressure around your cheeks, eyes or forehead?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Has your nose been blocked for several days?",
+"yesScore":6,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Persistent sinus symptoms may require medical evaluation."
+},
+
+{
+"id":"D012",
+"name":"Tonsillitis",
+
+"severity":"Low",
+"category":"Respiratory",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"sore throat","weight":10},
+{"name":"pain while swallowing","weight":10},
+{"name":"swollen tonsils","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"fever","weight":5},
+{"name":"bad breath","weight":4},
+{"name":"headache","weight":3},
+{"name":"fatigue","weight":3}
+],
+
+"negativeSymptoms":[
+"diarrhea",
+"burning urination",
+"joint swelling"
+],
+
+"followUpQuestions":[
+{
+"question":"Is swallowing painful?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Do you have swollen tonsils?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Seek medical care if symptoms are severe or persistent."
+},
+
+{
+"id":"D013",
+"name":"Allergic Rhinitis",
+
+"severity":"Low",
+"category":"Respiratory",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"sneezing","weight":10},
+{"name":"runny nose","weight":10},
+{"name":"itchy nose","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"itchy eyes","weight":8},
+{"name":"watery eyes","weight":7},
+{"name":"nasal congestion","weight":5}
+],
+
+"negativeSymptoms":[
+"high fever",
+"vomiting",
+"body pain"
+],
+
+"followUpQuestions":[
+{
+"question":"Do symptoms worsen around dust, pollen or pets?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Are your eyes itchy or watery?",
+"yesScore":7,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Avoid triggers and seek medical advice if symptoms interfere with daily life."
+},
+
+{
+"id":"D014",
+"name":"Migraine",
+
+"severity":"Moderate",
+"category":"Neurological",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"severe headache","weight":10},
+{"name":"light sensitivity","weight":10},
+{"name":"sound sensitivity","weight":10}
+],
+
+"secondarySymptoms":[
+{"name":"nausea","weight":6},
+{"name":"vomiting","weight":5},
+{"name":"blurred vision","weight":4}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"skin rash",
+"burning urination",
+"joint swelling"
+],
+
+"followUpQuestions":[
+{
+"question":"Does bright light worsen your headache?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Do you feel nauseous during the headache?",
+"yesScore":6,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Recurring severe headaches should be medically evaluated."
+},
+
+{
+"id":"D015",
+"name":"Cluster Headache",
+
+"severity":"Moderate",
+"category":"Neurological",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"one sided headache","weight":10},
+{"name":"pain around eye","weight":10},
+{"name":"severe headache","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"watery eye","weight":7},
+{"name":"restlessness","weight":6},
+{"name":"nasal congestion","weight":4}
+],
+
+"negativeSymptoms":[
+"skin rash",
+"diarrhea",
+"joint pain"
+],
+
+"followUpQuestions":[
+{
+"question":"Is the headache mainly around one eye?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Do attacks occur repeatedly in cycles?",
+"yesScore":6,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Severe recurrent headaches should be evaluated by a healthcare professional."
+},
+{
+"id":"D016",
+"name":"Stroke",
+
+"severity":"High",
+"category":"Neurological Emergency",
+
+"redFlag":true,
+
+"coreSymptoms":[
+{"name":"facial weakness","weight":10},
+{"name":"arm weakness","weight":10},
+{"name":"speech difficulty","weight":10}
+],
+
+"secondarySymptoms":[
+{"name":"sudden confusion","weight":8},
+{"name":"dizziness","weight":6},
+{"name":"severe headache","weight":5},
+{"name":"vision problems","weight":6}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"sneezing",
+"itchy eyes"
+],
+
+"followUpQuestions":[
+{
+"question":"Did symptoms start suddenly?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Is one side of the body weaker than the other?",
+"yesScore":10,
+"noScore":0
+}
+],
+
+"doctorAdvice":"⚠ Possible stroke. Seek emergency medical attention immediately."
+},
+
+{
+"id":"D017",
+"name":"GERD (Acid Reflux)",
+
+"severity":"Low",
+"category":"Digestive",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"heartburn","weight":10},
+{"name":"acid reflux","weight":10},
+{"name":"burning chest sensation","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"sour taste in mouth","weight":7},
+{"name":"burping","weight":5},
+{"name":"nausea","weight":4},
+{"name":"throat irritation","weight":4}
+],
+
+"negativeSymptoms":[
+"high fever",
+"joint pain",
+"skin rash"
+],
+
+"followUpQuestions":[
+{
+"question":"Does the burning feeling worsen after meals?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Do you feel acid coming into your throat or mouth?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Avoid trigger foods and consult a doctor if symptoms are frequent."
+},
+
+{
+"id":"D018",
+"name":"Peptic Ulcer Disease",
+
+"severity":"Moderate",
+"category":"Digestive",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"burning stomach pain","weight":10},
+{"name":"upper abdominal pain","weight":9},
+{"name":"pain on empty stomach","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"nausea","weight":5},
+{"name":"bloating","weight":5},
+{"name":"loss of appetite","weight":4},
+{"name":"vomiting","weight":3}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"sneezing",
+"itchy eyes"
+],
+
+"followUpQuestions":[
+{
+"question":"Does stomach pain occur when you are hungry?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Is the pain mainly in the upper abdomen?",
+"yesScore":7,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Persistent stomach pain should be medically evaluated."
+},
+
+{
+"id":"D019",
+"name":"Appendicitis",
+
+"severity":"High",
+"category":"Digestive Emergency",
+
+"redFlag":true,
+
+"coreSymptoms":[
+{"name":"right lower abdominal pain","weight":10},
+{"name":"abdominal tenderness","weight":9},
+{"name":"loss of appetite","weight":8}
+],
+
+"secondarySymptoms":[
+{"name":"nausea","weight":5},
+{"name":"vomiting","weight":5},
+{"name":"fever","weight":4},
+{"name":"abdominal pain worsening over time","weight":8}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"itchy eyes",
+"sneezing"
+],
+
+"followUpQuestions":[
+{
+"question":"Is the pain located on the lower right side of your abdomen?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Has the pain become worse over time?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"⚠ Appendicitis may require urgent medical treatment."
+},
+
+{
+"id":"D020",
+"name":"Irritable Bowel Syndrome (IBS)",
+
+"severity":"Moderate",
+"category":"Digestive",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"abdominal cramps","weight":10},
+{"name":"change in bowel habits","weight":9},
+{"name":"bloating","weight":8}
+],
+
+"secondarySymptoms":[
+{"name":"diarrhea","weight":5},
+{"name":"constipation","weight":5},
+{"name":"gas","weight":4},
+{"name":"abdominal discomfort","weight":4}
+],
+
+"negativeSymptoms":[
+"high fever",
+"blood in stool",
+"severe vomiting"
+],
+
+"followUpQuestions":[
+{
+"question":"Do symptoms come and go repeatedly?",
+"yesScore":7,
+"noScore":0
+},
+{
+"question":"Do you alternate between constipation and diarrhea?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Medical evaluation may help identify dietary and lifestyle triggers."
+},
+{
+"id":"D021",
+"name":"Urinary Tract Infection (UTI)",
+
+"severity":"Moderate",
+"category":"Urinary",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"burning urination","weight":10},
+{"name":"frequent urination","weight":10},
+{"name":"urgent urination","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"lower abdominal pain","weight":6},
+{"name":"cloudy urine","weight":7},
+{"name":"mild fever","weight":4},
+{"name":"pelvic discomfort","weight":5}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"sneezing",
+"light sensitivity"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you feel burning while urinating?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Do you need to urinate more often than usual?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Increase hydration and consult a doctor if symptoms persist."
+},
+
+{
+"id":"D022",
+"name":"Kidney Stone",
+
+"severity":"High",
+"category":"Urinary",
+
+"redFlag":true,
+
+"coreSymptoms":[
+{"name":"severe flank pain","weight":10},
+{"name":"blood in urine","weight":10},
+{"name":"side pain","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"nausea","weight":5},
+{"name":"vomiting","weight":5},
+{"name":"painful urination","weight":4},
+{"name":"restlessness","weight":4}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"skin rash",
+"sore throat"
+],
+
+"followUpQuestions":[
+{
+"question":"Is the pain severe and located in your side or back?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Have you noticed blood in your urine?",
+"yesScore":10,
+"noScore":0
+}
+],
+
+"doctorAdvice":"⚠ Severe kidney stone symptoms require medical evaluation."
+},
+
+{
+"id":"D023",
+"name":"Kidney Infection",
+
+"severity":"High",
+"category":"Urinary",
+
+"redFlag":true,
+
+"coreSymptoms":[
+{"name":"back pain","weight":10},
+{"name":"fever","weight":9},
+{"name":"burning urination","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"frequent urination","weight":6},
+{"name":"chills","weight":6},
+{"name":"nausea","weight":5},
+{"name":"fatigue","weight":4}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"itchy eyes",
+"sneezing"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you have fever along with urinary symptoms?",
+"yesScore":9,
+"noScore":0
+},
+{
+"question":"Do you have pain in your back near the kidneys?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"⚠ Kidney infections require prompt medical treatment."
+},
+
+{
+"id":"D024",
+"name":"Diabetes Mellitus",
+
+"severity":"High",
+"category":"Metabolic",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"frequent urination","weight":10},
+{"name":"excessive thirst","weight":10},
+{"name":"high blood sugar","weight":10}
+],
+
+"secondarySymptoms":[
+{"name":"increased hunger","weight":6},
+{"name":"fatigue","weight":5},
+{"name":"slow wound healing","weight":6},
+{"name":"weight loss","weight":5}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"sore throat",
+"skin blisters"
+],
+
+"followUpQuestions":[
+{
+"question":"Are you unusually thirsty most of the time?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Do you urinate more often than normal?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Blood sugar testing is recommended for confirmation."
+},
+
+{
+"id":"D025",
+"name":"Hypertension",
+
+"severity":"Moderate",
+"category":"Cardiovascular",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"high blood pressure","weight":10},
+{"name":"blurred vision","weight":8},
+{"name":"dizziness","weight":8}
+],
+
+"secondarySymptoms":[
+{"name":"headache","weight":5},
+{"name":"fatigue","weight":3},
+{"name":"chest discomfort","weight":4},
+{"name":"rapid heartbeat","weight":4}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"vomiting",
+"diarrhea"
+],
+
+"followUpQuestions":[
+{
+"question":"Have you been diagnosed with high blood pressure before?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Do you experience dizziness or blurred vision?",
+"yesScore":5,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Regular blood pressure monitoring is important."
+},
+{
+"id":"D026",
+"name":"Anemia",
+
+"severity":"Moderate",
+"category":"Blood Disorder",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"fatigue","weight":10},
+{"name":"weakness","weight":9},
+{"name":"pale skin","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"dizziness","weight":6},
+{"name":"shortness of breath","weight":5},
+{"name":"cold hands and feet","weight":4},
+{"name":"headache","weight":4}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"vomiting",
+"skin rash"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you feel tired most of the time?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Have you noticed unusual paleness of skin?",
+"yesScore":7,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Blood testing may be needed to confirm anemia."
+},
+
+{
+"id":"D027",
+"name":"Arthritis",
+
+"severity":"Moderate",
+"category":"Musculoskeletal",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"joint pain","weight":10},
+{"name":"joint stiffness","weight":9},
+{"name":"joint swelling","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"reduced movement","weight":6},
+{"name":"fatigue","weight":3},
+{"name":"warm joints","weight":5}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"vomiting",
+"loss of smell"
+],
+
+"followUpQuestions":[
+{
+"question":"Are your joints stiff after resting?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Do your joints appear swollen?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Persistent joint symptoms should be medically evaluated."
+},
+
+{
+"id":"D028",
+"name":"Depression",
+
+"severity":"Moderate",
+"category":"Mental Health",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"persistent sadness","weight":10},
+{"name":"loss of interest","weight":10},
+{"name":"low mood","weight":9}
+],
+
+"secondarySymptoms":[
+{"name":"fatigue","weight":4},
+{"name":"sleep changes","weight":5},
+{"name":"difficulty concentrating","weight":5},
+{"name":"hopelessness","weight":7}
+],
+
+"negativeSymptoms":[
+"high fever",
+"joint swelling",
+"runny nose"
+],
+
+"followUpQuestions":[
+{
+"question":"Have you lost interest in activities you previously enjoyed?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Have symptoms persisted for several weeks?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Mental health support from a qualified professional is recommended."
+},
+
+{
+"id":"D029",
+"name":"Anxiety Disorder",
+
+"severity":"Moderate",
+"category":"Mental Health",
+
+"redFlag":false,
+
+"coreSymptoms":[
+{"name":"excessive worry","weight":10},
+{"name":"panic feelings","weight":9},
+{"name":"restlessness","weight":8}
+],
+
+"secondarySymptoms":[
+{"name":"difficulty sleeping","weight":5},
+{"name":"rapid heartbeat","weight":5},
+{"name":"difficulty concentrating","weight":4},
+{"name":"sweating","weight":4}
+],
+
+"negativeSymptoms":[
+"high fever",
+"joint pain",
+"runny nose"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you frequently feel anxious without a clear reason?",
+"yesScore":8,
+"noScore":0
+},
+{
+"question":"Do you experience panic-like episodes?",
+"yesScore":8,
+"noScore":0
+}
+],
+
+"doctorAdvice":"Mental health guidance can help manage symptoms effectively."
+},
+
+{
+"id":"D030",
+"name":"Heart Attack (Myocardial Infarction)",
+
+"severity":"High",
+"category":"Cardiovascular Emergency",
+
+"redFlag":true,
+
+"coreSymptoms":[
+{"name":"chest pain","weight":10},
+{"name":"chest pressure","weight":10},
+{"name":"pain spreading to arm","weight":10}
+],
+
+"secondarySymptoms":[
+{"name":"shortness of breath","weight":7},
+{"name":"sweating","weight":6},
+{"name":"nausea","weight":4},
+{"name":"dizziness","weight":4}
+],
+
+"negativeSymptoms":[
+"runny nose",
+"sneezing",
+"itchy eyes"
+],
+
+"followUpQuestions":[
+{
+"question":"Do you have pressure or pain in the center of your chest?",
+"yesScore":10,
+"noScore":0
+},
+{
+"question":"Does the pain spread to your arm, jaw or neck?",
+"yesScore":10,
+"noScore":0
+}
+],
+
+"doctorAdvice":"⚠ Possible heart attack. Seek emergency medical attention immediately."
+}
 ]
