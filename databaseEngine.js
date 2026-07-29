@@ -21,7 +21,11 @@ async function loadDatabase() {
             throw new Error("Unable to load disease.json");
         }
 
-        diseases = await response.json();
+     const text = await response.text();
+
+console.log(text);
+
+diseases = JSON.parse(text);
 
         databaseLoaded = true;
 
