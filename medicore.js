@@ -36,146 +36,33 @@ pdfjsLib.GlobalWorkerOptions.workerSrc=
 // SYMPTOM DATABASE
 //======================================================
 
-const symptomDatabase=[
+function buildSymptomDatabase() {
 
-"Abdominal Pain",
-"Abdominal Swelling",
-"Abnormal Bleeding",
-"Acid Reflux",
-"Acne",
-"Aggression",
-"Anxiety",
-"Arm Pain",
-"Back Pain",
-"Bad Breath",
-"Bloating",
-"Blood In Stool",
-"Blood In Urine",
-"Blurred Vision",
-"Body Pain",
-"Bone Pain",
-"Breast Pain",
-"Bruising",
-"Burning Urination",
-"Chest Pain",
-"Chills",
-"Choking",
-"Cold Hands",
-"Cold Feet",
-"Confusion",
-"Constipation",
-"Cough",
-"Cough With Blood",
-"Cracked Lips",
-"Cramps",
-"Crying Excessively",
-"Dandruff",
-"Dark Urine",
-"Dehydration",
-"Depression",
-"Diarrhea",
-"Difficulty Breathing",
-"Difficulty Swallowing",
-"Dizziness",
-"Double Vision",
-"Dry Eyes",
-"Dry Mouth",
-"Dry Skin",
-"Ear Pain",
-"Ear Discharge",
-"Excessive Hunger",
-"Excessive Sweating",
-"Excessive Thirst",
-"Eye Pain",
-"Eye Redness",
-"Eye Swelling",
-"Face Swelling",
-"Facial Pain",
-"Fainting",
-"Fatigue",
-"Fever",
-"Finger Pain",
-"Foot Pain",
-"Frequent Urination",
-"Gas",
-"Gum Bleeding",
-"Hair Loss",
-"Hallucinations",
-"Hand Tremor",
-"Headache",
-"Hearing Loss",
-"Heartburn",
-"High Blood Pressure",
-"Hoarseness",
-"Hot Flashes",
-"Increased Appetite",
-"Increased Sleep",
-"Indigestion",
-"Irritability",
-"Itching",
-"Jaw Pain",
-"Joint Pain",
-"Leg Pain",
-"Loss Of Appetite",
-"Loss Of Balance",
-"Loss Of Consciousness",
-"Loss Of Smell",
-"Loss Of Taste",
-"Low Blood Pressure",
-"Memory Loss",
-"Mouth Ulcers",
-"Muscle Pain",
-"Muscle Weakness",
-"Nasal Congestion",
-"Neck Pain",
-"Night Sweats",
-"Nose Bleeding",
-"Numbness",
-"Pain During Urination",
-"Palpitations",
-"Paralysis",
-"Pelvic Pain",
-"Persistent Cough",
-"Rash",
-"Rectal Pain",
-"Red Eyes",
-"Runny Nose",
-"Seizures",
-"Shoulder Pain",
-"Sinus Pain",
-"Skin Peeling",
-"Skin Rash",
-"Sleeplessness",
-"Sneezing",
-"Sore Throat",
-"Speech Difficulty",
-"Stomach Pain",
-"Stress",
-"Swollen Ankles",
-"Swollen Feet",
-"Swollen Glands",
-"Swollen Legs",
-"Swollen Lymph Nodes",
-"Swollen Tongue",
-"Swollen Face",
-"Swollen Hands",
-"Tingling",
-"Tinnitus",
-"Tiredness",
-"Tooth Pain",
-"Tremors",
-"Unexplained Weight Gain",
-"Unexplained Weight Loss",
-"Vision Loss",
-"Vomiting",
-"Vomiting Blood",
-"Weakness",
-"Wheezing",
-"White Patches In Mouth",
-"Yellow Eyes",
-"Yellow Skin"
+    const allSymptoms = new Set();
 
-];
+    diseaseDatabase.forEach(disease => {
+
+        disease.coreSymptoms.forEach(symptom => {
+            allSymptoms.add(symptom.name);
+        });
+
+        disease.secondarySymptoms.forEach(symptom => {
+            allSymptoms.add(symptom.name);
+        });
+
+        disease.negativeSymptoms.forEach(symptom => {
+            allSymptoms.add(symptom);
+        });
+
+    });
+
+    symptomDatabase.length = 0;
+
+    [...allSymptoms]
+        .sort()
+        .forEach(symptom => symptomDatabase.push(symptom));
+
+}
 
 
 
@@ -210,7 +97,8 @@ function loadSymptoms(){
 
     });
 
-}//======================================================
+}
+//======================================================
 // SEARCH SYMPTOMS
 //======================================================
 
@@ -299,6 +187,8 @@ function loadDatabase(){
 if(typeof diseases!=="undefined"){
 
 diseaseDatabase=diseases;
+buildSymptomDatabase();
+loadSymptoms();
 
 console.log("Disease database loaded.");
 
