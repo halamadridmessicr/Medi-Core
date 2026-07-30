@@ -31,8 +31,6 @@ let medicineDatabase=[];
 
 let symptomDatabase = [];
 
-let selectedSymptoms = [];
-
 let currentDiagnosis = null;
 
 let diagnosisResults = [];
