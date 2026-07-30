@@ -361,3 +361,216 @@ function searchSymptoms(){
     });
 
 }
+function analyzeSymptoms(){
+
+    console.log("ANALYZE STARTED");
+
+    if(selectedSymptoms.length===0){
+
+        alert(
+        "Please select at least one symptom."
+        );
+
+        return;
+
+    }
+
+    diagnosisResults = [];
+
+    diseaseDatabase.forEach(disease=>{
+
+        let score = 0;
+
+        let matchedSymptoms = [];
+
+        //------------------------------------------------
+        // Core Symptoms
+        //------------------------------------------------
+
+        if(disease.coreSymptoms){
+
+            disease.coreSymptoms.forEach(symptom=>{
+
+                if(
+
+                    selectedSymptoms.includes(
+
+                        symptom.name.toLowerCase()
+
+                    )
+
+                ){
+
+                    score += symptom.weight;
+
+                    matchedSymptoms.push(
+                        symptom.name
+                    );
+
+                }
+
+            });
+
+        }
+
+        //------------------------------------------------
+        // Secondary Symptoms
+        //------------------------------------------------
+
+        if(disease.secondarySymptoms){
+
+            disease.secondarySymptoms.forEach(symptom=>{
+
+                if(
+
+                    selectedSymptoms.includes(
+
+                        symptom.name.toLowerCase()
+
+                    )
+
+                ){
+
+                    score +=
+                    symptom.weight * 0.5;
+
+                    matchedSymptoms.push(
+                        symptom.name
+                    );
+
+                }
+
+            });
+
+        }
+
+        if(score>0){
+
+            diagnosisResults.push({
+
+                disease:disease,
+
+                score:score,
+
+                matchedSymptoms:
+                matchedSymptoms
+
+            });
+
+        }
+
+    });
+
+    diagnosisResults.sort(
+
+        (a,b)=>
+
+        b.score-a.score
+
+    );
+
+    if(
+        diagnosisResults.length===0
+    ){
+
+        alert(
+        "No disease match found."
+        );
+
+        return;
+
+    }
+
+    currentDiagnosis =
+    diagnosisResults[0];
+
+    showFinalDiagnosis();
+
+}
+function showFinalDiagnosis(){
+
+    const result =
+    currentDiagnosis;
+
+    const disease =
+    result.disease;
+
+    const workspace =
+    document.getElementById(
+        "workspace"
+    );
+
+    workspace.innerHTML = `
+
+    <div class="moduleCard">
+
+        <h1>
+
+        ${disease.name}
+
+        </h1>
+
+        <h3>
+
+        Score:
+        ${Math.round(result.score)}
+
+        </h3>
+
+        <p>
+
+        Severity:
+        ${disease.severity}
+
+        </p>
+
+        <p>
+
+        Category:
+        ${disease.category}
+
+        </p>
+
+        <h3>
+
+        Matched Symptoms
+
+        </h3>
+
+        <ul>
+
+        ${result.matchedSymptoms
+        .map(
+            s=>`<li>${s}</li>`
+        )
+        .join("")}
+
+        </ul>
+
+        <h3>
+
+        Doctor Advice
+
+        </h3>
+
+        <p>
+
+        ${disease.doctorAdvice}
+
+        </p>
+
+        <br>
+
+        <button
+        onclick="openSymptoms()"
+        >
+
+        New Analysis
+
+        </button>
+
+    </div>
+
+    `;
+
+}
