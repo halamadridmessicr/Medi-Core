@@ -31,6 +31,14 @@ let medicineDatabase=[];
 
 let symptomDatabase = [];
 
+let selectedSymptoms = [];
+
+let currentDiagnosis = null;
+
+let diagnosisResults = [];
+
+let pendingQuestions = [];
+
 pdfjsLib.GlobalWorkerOptions.workerSrc=
 "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 //======================================================
@@ -74,24 +82,28 @@ function buildSymptomDatabase() {
 
 function loadSymptoms(){
 
-    const grid = document.getElementById("symptomGrid");
+    const grid =
+    document.getElementById("symptomGrid");
 
-    if(!grid){
-        console.error("symptomGrid not found");
-        return;
-    }
+    if(!grid) return;
 
-    grid.innerHTML="";
+    grid.innerHTML = "";
 
     symptomDatabase.forEach(symptom=>{
 
         grid.innerHTML += `
 
         <div
-            class="symptomChip"
-            onclick="toggleSymptom(this,'${symptom}')">
+        class="symptomCard"
 
-            ${symptom}
+        onclick="toggleSymptom(
+        this,
+        '${symptom.toLowerCase()}'
+        )"
+
+        >
+
+        ${symptom}
 
         </div>
 
@@ -303,45 +315,98 @@ Select a module to begin intelligent healthcare analysis.
 // PART 3
 // AI DIAGNOSIS ENGINE
 //======================================================
+
 function analyzeSymptoms(){
 
-    if(selectedSymptoms.length === 0){
+    if(selectedSymptoms.length===0){
 
-        alert("Please select at least one symptom.");
+        alert(
+        "Please select at least one symptom."
+        );
+
         return;
 
     }
 
-    let results = [];
+    diagnosisResults=[];
+
+    const selected =
+    selectedSymptoms.map(
+        s=>s.toLowerCase().trim()
+    );
+
+    //------------------------------------------------
+    // Check every disease
+    //------------------------------------------------
 
     diseases.forEach(disease=>{
 
-        let score = 0;
+        let score=0;
 
-        let matchedCore = [];
-        let matchedSecondary = [];
-        let matchedNegative = [];
+        let matchedCore=[];
 
-        let maxPossibleScore = 0;
+        let matchedSecondary=[];
 
-        //--------------------------------------------------
+        let matchedRequired=[];
+
+        let failedRequired=false;
+
+        //------------------------------------------------
+        // REQUIRED SYMPTOMS
+        //------------------------------------------------
+
+        if(disease.requiredSymptoms){
+
+            disease.requiredSymptoms.forEach(symptom=>{
+
+                if(
+                    selected.includes(
+                        symptom.toLowerCase()
+                    )
+                ){
+
+                    matchedRequired.push(
+                        symptom
+                    );
+
+                }
+
+            });
+
+            if(
+                matchedRequired.length <
+                disease.requiredSymptoms.length
+            ){
+
+                failedRequired=true;
+
+            }
+
+        }
+
+        if(failedRequired)
+            return;
+
+        //------------------------------------------------
         // CORE SYMPTOMS
-        //--------------------------------------------------
+        //------------------------------------------------
 
         if(disease.coreSymptoms){
 
             disease.coreSymptoms.forEach(symptom=>{
 
-                maxPossibleScore += symptom.weight;
-
                 if(
-                    selectedSymptoms
-                    .map(s=>s.toLowerCase())
-                    .includes(symptom.name.toLowerCase())
+                    selected.includes(
+                        symptom.name.toLowerCase()
+                    )
                 ){
 
-                    score += symptom.weight;
-                    matchedCore.push(symptom.name);
+                    score +=
+                    symptom.weight * 3;
+
+                    matchedCore.push(
+                        symptom.name
+                    );
 
                 }
 
@@ -349,24 +414,26 @@ function analyzeSymptoms(){
 
         }
 
-        //--------------------------------------------------
+        //------------------------------------------------
         // SECONDARY SYMPTOMS
-        //--------------------------------------------------
+        //------------------------------------------------
 
         if(disease.secondarySymptoms){
 
             disease.secondarySymptoms.forEach(symptom=>{
 
-                maxPossibleScore += symptom.weight;
-
                 if(
-                    selectedSymptoms
-                    .map(s=>s.toLowerCase())
-                    .includes(symptom.name.toLowerCase())
+                    selected.includes(
+                        symptom.name.toLowerCase()
+                    )
                 ){
 
-                    score += symptom.weight;
-                    matchedSecondary.push(symptom.name);
+                    score +=
+                    symptom.weight;
+
+                    matchedSecondary.push(
+                        symptom.name
+                    );
 
                 }
 
@@ -374,22 +441,21 @@ function analyzeSymptoms(){
 
         }
 
-        //--------------------------------------------------
-        // NEGATIVE SYMPTOMS
-        //--------------------------------------------------
+        //------------------------------------------------
+        // EXCLUSION SYMPTOMS
+        //------------------------------------------------
 
-        if(disease.negativeSymptoms){
+        if(disease.exclusionSymptoms){
 
-            disease.negativeSymptoms.forEach(symptom=>{
+            disease.exclusionSymptoms.forEach(symptom=>{
 
                 if(
-                    selectedSymptoms
-                    .map(s=>s.toLowerCase())
-                    .includes(symptom.toLowerCase())
+                    selected.includes(
+                        symptom.toLowerCase()
+                    )
                 ){
 
-                    score -= 8;
-                    matchedNegative.push(symptom);
+                    score -= 10;
 
                 }
 
@@ -397,123 +463,92 @@ function analyzeSymptoms(){
 
         }
 
-        //--------------------------------------------------
-        // MINIMUM MATCH REQUIREMENT
-        //--------------------------------------------------
+        //------------------------------------------------
+        // Ignore weak matches
+        //------------------------------------------------
 
-        const totalMatched =
-            matchedCore.length +
-            matchedSecondary.length;
-
-        if(totalMatched === 0) return;
-
-        //--------------------------------------------------
-        // CONFIDENCE
-        //--------------------------------------------------
-
-        let confidence = Math.round(
-            (score / maxPossibleScore) * 100
-        );
-
-        if(confidence < 0)
-            confidence = 0;
-
-        if(confidence > 100)
-            confidence = 100;
-
-        //--------------------------------------------------
-        // CORE SYMPTOM BOOST
-        //--------------------------------------------------
-
-        if(
-            disease.coreSymptoms &&
-            matchedCore.length >=
-            Math.ceil(
-                disease.coreSymptoms.length * 0.6
-            )
-        ){
-
-            confidence += 10;
-
-        }
-
-        if(confidence > 100)
-            confidence = 100;
-
-        //--------------------------------------------------
-        // REJECT POOR MATCHES
-        //--------------------------------------------------
-
-        if(confidence < 20)
+        if(score<=0)
             return;
 
-        //--------------------------------------------------
-        // SAVE RESULT
-        //--------------------------------------------------
+        //------------------------------------------------
+        // Save result
+        //------------------------------------------------
 
-        results.push({
+        diagnosisResults.push({
 
-            disease : disease,
+            disease:disease,
 
-            confidence : confidence,
+            score:score,
 
-            score : score,
+            matchedRequired:
+            matchedRequired,
 
-            matchedCore : matchedCore,
+            matchedCore:
+            matchedCore,
 
-            matchedSecondary : matchedSecondary,
+            matchedSecondary:
+            matchedSecondary,
 
-            matchedNegative : matchedNegative,
+            matchedSymptoms:[
 
-            totalMatched : totalMatched
+                ...matchedRequired,
+
+                ...matchedCore,
+
+                ...matchedSecondary
+
+            ]
 
         });
 
     });
 
-    //--------------------------------------------------
-    // SORT
-    //--------------------------------------------------
+    //------------------------------------------------
+    // Sort
+    //------------------------------------------------
 
-    results.sort((a,b)=>{
+    diagnosisResults.sort(
 
-        if(
-            b.confidence !== a.confidence
-        ){
+        (a,b)=>
 
-            return b.confidence -
-                   a.confidence;
+        b.score-a.score
 
-        }
+    );
 
-        return b.score - a.score;
+    //------------------------------------------------
+    // No result
+    //------------------------------------------------
 
-    });
+    if(
+        diagnosisResults.length===0
+    ){
 
-    //--------------------------------------------------
-    // NO MATCH
-    //--------------------------------------------------
-
-    if(results.length === 0){
-
-        workspace.innerHTML = `
+        workspace.innerHTML=`
 
         <div class="moduleCard">
 
             <h2>
-            ❌ No Strong Match Found
+
+            ❌ No Match Found
+
             </h2>
 
             <p>
-            MEDI-CORE AI could not find
-            a reliable diagnosis.
+
+            Please select more symptoms.
+
             </p>
 
             <button
+
             class="primaryBtn"
+
             onclick="openSymptoms()"
+
             >
+
             Try Again
+
             </button>
 
         </div>
@@ -524,28 +559,31 @@ function analyzeSymptoms(){
 
     }
 
-    //--------------------------------------------------
-    // TOP RESULT
-    //--------------------------------------------------
+    //------------------------------------------------
+    // Best disease
+    //------------------------------------------------
 
-    currentDiagnosis = results[0];
+    currentDiagnosis=
+    diagnosisResults[0];
 
-    //--------------------------------------------------
-    // FOLLOW UP QUESTIONS
-    //--------------------------------------------------
+    //------------------------------------------------
+    // Follow-up
+    //------------------------------------------------
 
     if(
 
-        currentDiagnosis.confidence < 80 &&
+        currentDiagnosis.disease
+        .followUpQuestions &&
 
-        currentDiagnosis.disease.followUpQuestions &&
-
-        currentDiagnosis.disease.followUpQuestions.length > 0
+        currentDiagnosis.disease
+        .followUpQuestions.length>0
 
     ){
 
-        pendingQuestions =
-        currentDiagnosis.disease.followUpQuestions;
+        pendingQuestions=
+
+        currentDiagnosis.disease
+        .followUpQuestions;
 
         showFollowUpQuestions();
 
@@ -558,6 +596,7 @@ function analyzeSymptoms(){
     }
 
 }
+
 //======================================================
 // PART 4
 // FOLLOW-UP QUESTIONS
@@ -1122,180 +1161,63 @@ let pendingQuestions = [];
 
 function openSymptoms(){
 
-    currentMode="symptoms";
+    currentMode = "symptoms";
 
-    resultSection.classList.add("hidden");
+    selectedSymptoms = [];
 
-    selectedSymptoms=[];
+    currentDiagnosis = null;
 
-    currentDiagnosis=null;
+    diagnosisResults = [];
 
-    pendingQuestions=[];
+    workspace.innerHTML = `
 
-    if(!diseases || diseases.length===0){
+    <div class="moduleCard">
 
-        alert("Disease database is still loading.");
+        <h2>🩺 MEDI-CORE AI</h2>
 
-        return;
-
-    }
-
-    //--------------------------------------------------
-    // Collect every unique symptom
-    //--------------------------------------------------
-
-
-const symptomSet = new Set();
-
-diseases.forEach(disease => {
-
-    if (disease.coreSymptoms) {
-
-        disease.coreSymptoms.forEach(symptom => {
-
-            symptomSet.add(symptom.name);
-
-        });
-
-    }
-
-    if (disease.secondarySymptoms) {
-
-        disease.secondarySymptoms.forEach(symptom => {
-
-            symptomSet.add(symptom.name);
-
-        });
-
-    }
-
-});
-
-    const symptoms=[...symptomSet].sort();
-
-    //--------------------------------------------------
-    // Generate symptom cards
-    //--------------------------------------------------
-
-    let cards="";
-
-    symptoms.forEach(symptom=>{
-
-        cards+=`
-
-        <div
-
-        class="symptomCard"
-
-        data-symptom="${symptom.toLowerCase()}"
-
-        onclick="toggleSymptom(this,'${symptom.replace(/'/g,"\\'")}')"
-
-        >
-
-        ${symptom}
-
-        </div>
-
-        `;
-
-    });
-
-    //--------------------------------------------------
-    // Build Interface
-    //--------------------------------------------------
-
-    workspace.innerHTML=`
-
-    <div class="moduleCard symptomModule">
-
-        <h1>
-
-        🩺 MEDI-CORE AI
-
-        </h1>
-
-        <h2>
-
-        Symptom Diagnosis
-
-        </h2>
-
-        <p>
-
-        Select every symptom experienced by the patient.
-
-        </p>
+        <p>Select patient symptoms</p>
 
         <input
-
         id="symptomSearch"
-
         type="text"
-
-        placeholder="Search symptoms..."
-
+        placeholder="Search symptom..."
         onkeyup="searchSymptoms()"
-
         >
-
-        <br><br>
 
         <div
-
         id="selectedSymptomsBox"
-
         class="selectedSymptoms"
-
         >
 
-        No symptoms selected.
+        No symptoms selected
 
         </div>
 
         <br>
 
         <div
-
         id="symptomGrid"
-
         class="symptomGrid"
-
         >
-
-        ${cards}
 
         </div>
 
         <br>
 
         <button
-
         class="primaryBtn"
-
         onclick="analyzeSymptoms()"
-
         >
 
         Analyze Symptoms
 
         </button>
 
-        <button
-
-        class="secondaryBtn"
-
-        onclick="clearSymptoms()"
-
-        >
-
-        Reset
-
-        </button>
-
     </div>
 
     `;
+
+    loadSymptoms();
 
 }
 //======================================================
@@ -1308,27 +1230,40 @@ diseases.forEach(disease => {
 // SELECT / DESELECT SYMPTOM
 //===========================================
 
-function toggleSymptom(element,symptom){
+function toggleSymptom(
+element,
+symptom
+){
 
-    if(selectedSymptoms.includes(symptom)){
+    symptom =
+    symptom.toLowerCase().trim();
 
-        selectedSymptoms=
+    if(
+        selectedSymptoms.includes(
+            symptom
+        )
+    ){
 
+        selectedSymptoms =
         selectedSymptoms.filter(
-
             s=>s!==symptom
-
         );
 
-        element.classList.remove("active");
+        element.classList.remove(
+            "active"
+        );
 
     }
 
     else{
 
-        selectedSymptoms.push(symptom);
+        selectedSymptoms.push(
+            symptom
+        );
 
-        element.classList.add("active");
+        element.classList.add(
+            "active"
+        );
 
     }
 
@@ -1336,53 +1271,34 @@ function toggleSymptom(element,symptom){
 
 }
 
-
-
 //===========================================
 // UPDATE SELECTED SYMPTOMS
 //===========================================
 
 function updateSelectedSymptoms(){
 
-    const box=
-
+    const box =
     document.getElementById(
-
         "selectedSymptomsBox"
-
     );
 
-    if(selectedSymptoms.length===0){
+    if(!box) return;
 
-        box.innerHTML=
+    if(
+        selectedSymptoms.length===0
+    ){
 
-        "No symptoms selected.";
+        box.innerHTML =
+        "No symptoms selected";
 
         return;
 
     }
 
-    let html="";
-
-    selectedSymptoms.forEach(symptom=>{
-
-        html+=`
-
-        <span class="selectedChip">
-
-        ${symptom}
-
-        </span>
-
-        `;
-
-    });
-
-    box.innerHTML=html;
+    box.innerHTML =
+    selectedSymptoms.join(", ");
 
 }
-
-
 
 //===========================================
 // SEARCH SYMPTOMS
@@ -1390,53 +1306,33 @@ function updateSelectedSymptoms(){
 
 function searchSymptoms(){
 
-    const search=
+    const query =
+    document
+    .getElementById(
+        "symptomSearch"
+    )
+    .value
+    .toLowerCase();
 
     document
-
-    .getElementById(
-
-        "symptomSearch"
-
-    )
-
-    .value
-
-    .toLowerCase()
-
-    .trim();
-
-    const cards=
-
-    document.querySelectorAll(
-
+    .querySelectorAll(
         ".symptomCard"
+    )
+    .forEach(card=>{
 
-    );
+        card.style.display =
 
-    cards.forEach(card=>{
+        card.innerText
+        .toLowerCase()
+        .includes(query)
 
-        const symptom=
+        ? "block"
 
-        card.dataset.symptom;
-
-        if(symptom.includes(search)){
-
-            card.style.display="flex";
-
-        }
-
-        else{
-
-            card.style.display="none";
-
-        }
+        : "none";
 
     });
 
 }
-
-
 
 //===========================================
 // RESET
