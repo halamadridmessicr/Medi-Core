@@ -1104,8 +1104,6 @@ function showFinalDiagnosis(){
 //===========================================
 
 
-let currentDiagnosis = null;
-
 let pendingQuestions = [];
 
 
